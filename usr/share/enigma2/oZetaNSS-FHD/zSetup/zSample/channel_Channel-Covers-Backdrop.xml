@@ -1,0 +1,6 @@
+	<!-- *** oZeta - XML Version 2.27 Channel Selection Cover By zSetup v2.0.0 *** -->  
+	<!-- Author lululla : Modules : TempChannelSelectionLong + zBackdropX -->
+	<screen name="ChannelSelection" position="0,0" size="1920,1080" title="InfoBar" backgroundColor="transparent" flags="wfNoBorder">
+		<panel name="TempChannelSelectionLong"/>
+       <widget source="ServiceEvent" render="zBackdropX" position="992,703" size="850,370" alphatest="blend" transparent="1" zPosition="0" />
+	</screen>
