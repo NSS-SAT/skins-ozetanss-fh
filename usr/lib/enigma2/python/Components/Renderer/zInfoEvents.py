@@ -161,11 +161,26 @@ def convtext(text=''):
             print('original text: ', text)
             text = text.replace("\xe2\x80\x93", "").replace('\xc2\x86', '').replace('\xc2\x87', '')  # replace special
             text = text.lower()
-            text = text.replace('1^ visione rai', '').replace('1^ visione', '').replace('primatv', '').replace('1^tv', '').replace('1^ tv', '')
+            text = text.replace('1^ visione rai', '').replace('1^ visione', '').replace('primatv', '').replace('1^tv', '')
+            text = text.replace('prima visione', '').replace('1^ tv', '').replace('((', '(').replace('))', ')')
             if 'studio aperto' in text:
                 text = 'studio aperto'
             if 'josephine ange gardien' in text:
                 text = 'josephine ange gardien'
+            if 'elementary' in text:
+                text = 'elementary'
+            if 'squadra speciale cobra 11' in text:
+                text = 'squadra speciale cobra 11'
+            if 'criminal minds' in text:
+                text = 'criminal minds'
+            if 'i delitti del barlume' in text:
+                text = 'i delitti del barlume'
+            if 'senza traccia' in text:
+                text = 'senza traccia'
+            if 'hudson e rex' in text:
+                text = 'hudson e rex'
+            if 'ben-hur' in text:
+                text = 'ben-hur'
             if text.endswith("the"):
                 text.rsplit(" ", 1)[0]
                 text = text.rsplit(" ", 1)[0]
@@ -173,49 +188,26 @@ def convtext(text=''):
                 print('the from last to start text: ', text)
             text = text + 'FIN'
             # text = re.sub("[^\w\s]", "", text)  # remove .
-            text = re.sub(' [\:][a-z0-9]+.*?FIN', '', text)
-            text = re.sub(' [\:][ ][a-z0-9]+.*?FIN', '', text)
-            text = re.sub(' [\(][ ][a-z0-9]+.*?FIN', '', text)
-            text = re.sub(' [\-][ ][a-z0-9]+.*?FIN', '', text)
-            print('[(02)] ', text)
-
-            if re.search('[Ss][0-9]+[Ee][0-9]+.*?FIN', text):
-                text = re.sub('[Ss][0-9]+[Ee][0-9]+.*[a-zA-Z0-9_]+.*?FIN', '', text, flags=re.S|re.I)
-            if re.search('[Ss][0-9] [Ee][0-9]+.*?FIN', text):
-                text = re.sub('[Ss][0-9] [Ee][0-9]+.*[a-zA-Z0-9_]+.*?FIN', '', text, flags=re.S|re.I)
-            if re.search(' - [Ss][0-9] [Ee][0-9]+.*?FIN', text):
-                text = re.sub(' - [Ss][0-9] [Ee][0-9]+.*?FIN', '', text, flags=re.S|re.I)
-            if re.search(' - [Ss][0-9]+[Ee][0-9]+.*?FIN', text):
-                text = re.sub(' - [Ss][0-9]+[Ee][0-9]+.*?FIN', '', text, flags=re.S|re.I)
-
-            text = re.sub("([\(\[]).*?([\)\]])|(: odc.\d+)|(\d+: odc.\d+)|(\d+ odc.\d+)|(:)|( -(.*?).*)|(,)|!|\+.*?FIN", "", text)
-            text = re.sub('odc. [0-9]+.*?FIN', '', text)
-            text = re.sub(r'\(.*[^A-Za-z0-9]\)+.+?FIN', '', text).rstrip()  # remove episode number from series, like "series name (234) and not (Un)defeated"
-            print('[(0)] ', text)
+            # text = re.sub(' [\:][a-z0-9]+.*?FIN', '', text)
+            # text = re.sub(' [\:][ ][a-zA-Z0-9]+.*?FIN', '', text)
+            # text = re.sub(' [\(][ ][a-zA-Z0-9]+.*?FIN', '', text)
+            # text = re.sub(' [\-][ ][a-zA-Z0-9]+.*?FIN', '', text)
+            print('[(00)] ', text)
+            if re.search(r'[Ss][0-9][Ee][0-9]+.*?FIN', text):
+                text = re.sub(r'[Ss][0-9][Ee][0-9]+.*?FIN', '', text)
+            if re.search(r'[Ss][0-9] [Ee][0-9]+.*?FIN', text):
+                text = re.sub(r'[Ss][0-9] [Ee][0-9]+.*?FIN', '', text)
+            text = text.partition("(")[0]  # .strip()
+            text = text.partition(":")[0]  # .strip()
+            text = text.partition(" -")[0]  # .strip()
+            print('[(01)] ', text)
             text = re.sub(' - +.+?FIN', '', text)  # all episodes and series ????
             text = re.sub('FIN', '', text)
-            print('[(1)] ', text)
-            text = REGEX.sub('', text)  # paused
-            print('[(2)] ', text)
-            # # add
-            # remove || content at start
+            print('[(02)] ', text)
+            # text = REGEX.sub('', text)  # paused
+            print('[(03)] ', text)
             text = re.sub(r'^\|[\w\-\|]*\|', '', text)
-            # print('^\|[\w\-\|]*\| text: ', text)
-            # # remove () content
-            # n = 1  # run at least once
-            # while n:
-                # text, n = re.subn(r'\([^\(\)]*\)', '', text)
-            # print('\([^\(\)]*\) text: ', text)
-            # # remove [] content
-            # n = 1  # run at least once
-            # while n:
-                # text, n = re.subn(r'\[[^\[\]]*\]', '', text)
-            # print('\[[^\[\]]*\] text: ', text)
-            # # add end
             text = re.sub(r"[-,?!/\.\":]", '', text)  # replace (- or , or ! or / or . or " or :) by space
-            # cleanEvent = re.sub('\ \(\d+\)$', '', text) #remove episode-number " (xxx)" at the end
-            # cleanEvent = re.sub('\ \(\d+\/\d+\)$', '', cleanEvent) #remove episode-number " (xx/xx)" at the end
-            # text = re.sub('\!+$', '', cleanEvent)
             # text = unicodify(text)
             text = remove_accents(text)
             text = text.strip()
@@ -412,7 +404,7 @@ class zInfoEvents(Renderer, VariableText):
             self.timer_conn = self.timer.timeout.connect(self.dwn)
         except:
             self.timer.callback.append(self.dwn)
-        self.timer.start(50, True)
+        self.timer.start(30, True)
 
     def dwn(self):
         start_new_thread(self.epgs, ())
