@@ -100,9 +100,15 @@ apdb = dict()
 try:
     lng = config.osd.language.value
     lng = lng[:-3]
+                                              
+                
+                                  
 except:
     lng = 'en'
     pass
+                          
+                              
+                  
 
 
 # SET YOUR PREFERRED BOUQUET FOR AUTOMATIC POSTER GENERATION
@@ -120,7 +126,7 @@ def SearchBouquetTerrestrial():
             file = f.read()
             x = file.strip().lower()
             if x.find('eeee') != -1:
-                # if x.find('82000') == -1 and x.find('c0000') == -1:
+                if x.find('82000') == -1 and x.find('c0000') == -1:
                     return file
                     break
 
@@ -255,10 +261,21 @@ def convtext(text=''):
                 text = re.sub(r'[Ss][0-9][Ee][0-9]+.*?FIN', '', text)
             if re.search(r'[Ss][0-9] [Ee][0-9]+.*?FIN', text):
                 text = re.sub(r'[Ss][0-9] [Ee][0-9]+.*?FIN', '', text)
+            print('[(01)] ', text)
+
+            text = re.sub(r'(odc.\s\d+)+.*?FIN', '', text)
+            text = re.sub(r'(odc.\d+)+.*?FIN', '', text)
+            text = re.sub(r'(\d+)+.*?FIN', '', text)
+            text = text.partition("(")[0] + 'FIN'  # .strip()
+            text = re.sub("\s\d+", "", text)
+            print('1 odc my test:', text)
+
             text = text.partition("(")[0]  # .strip()
             text = text.partition(":")[0]  # .strip()
             text = text.partition(" -")[0]  # .strip()
-            print('[(01)] ', text)
+            # text = re.sub(r'(?:\d+\s\odc\.\d+\s)?(.+)+.*?FIN', '', text)
+            print('2 my test:', text)
+
             text = re.sub(' - +.+?FIN', '', text)  # all episodes and series ????
             text = re.sub('FIN', '', text)
             print('[(02)] ', text)
@@ -416,8 +433,8 @@ class PosterAutoDB(zPosterXDownloadThread):
                                 val, log = self.search_google(dwn_poster, pstcanal, canal[4], canal[3], canal[0])
                                 if val and log.find("SUCCESS"):
                                     newfd += 1
-                            newcn = canal[0]
-                            self.logAutoDB("[AutoDB] {} new file(s) added ({})".format(newfd, newcn))
+                        newcn = canal[0]
+                        self.logAutoDB("[AutoDB] {} new file(s) added ({})".format(newfd, newcn))
                 except Exception as e:
                     self.logAutoDB("[AutoDB] *** service error ({})".format(e))
             # AUTO REMOVE OLD FILES
@@ -568,7 +585,6 @@ class zPosterX(Renderer):
                     pstrNm = self.path + '/' + pstcanal + ".jpg"
                     self.pstcanal = str(pstrNm)
                 if os.path.exists(self.pstcanal):
-                    # if os.path.getsize(self.pstrNm) > 0:
                     self.logPoster("[LOAD : showPoster] {}".format(self.pstcanal))
                     self.instance.setPixmap(loadJPG(self.pstcanal))
                     self.instance.setScale(1)
@@ -594,7 +610,7 @@ class zPosterX(Renderer):
                 time.sleep(0.5)
                 loop = loop - 1
             if found:
-                self.timer.start(20, True)
+                self.timer.start(10, True)
 
     def logPoster(self, logmsg):
         try:

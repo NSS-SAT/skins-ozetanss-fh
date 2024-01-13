@@ -243,7 +243,7 @@
     <!-- Plugins OK -->
     <screen name="PluginBrowser" position="0,0" size="1920,1080" Title="ATV Plugins" backgroundColor="transparent" flags="wfNoBorder">
         <panel name="LayerMenu1500"/>
-        <panel name="vButtonTemplate-1500"/>
+        <!-- <panel name="vButtonTemplate-1500"/> -->
         <ePixmap position="230,10" size="110,110" pixmap="oZetaNSS-FHD/iconsmenu/menu_mainmenu_pluginhider.png" alphatest="blend" transparent="1" scale="1" zPosition="1"/>
         <widget name="list" position="230,140" size="1250,800" font="Regular;30" itemHeight="80" scrollbarMode="showOnDemand" scrollbarWidth="10" transparent="1" zPosition="1" scrollbarSliderForegroundColor="#606060" scrollbarSliderBackgroundColor="#303030" backgroundColor="#000000" backgroundColorSelected="bluette" foregroundColorSelected="#ffffff"/>
         <ePixmap pixmap="buttons/80/key_menu.png" position="1400,1025" size="80,40" alphatest="blend"/>
@@ -258,7 +258,7 @@
     <!-- mod mmark 30-12-23 -->
     <screen name="PluginBrowserList" position="0,0" size="1920,1080" Title="ATV Plugins" backgroundColor="transparent" flags="wfNoBorder">
         <panel name="LayerMenu1500"/>
-        <panel name="vButtonTemplate-1500"/>
+        <!-- <panel name="vButtonTemplate-1500"/> -->
         <ePixmap position="230,10" size="110,110" pixmap="oZetaNSS-FHD/iconsmenu/menu_mainmenu_pluginhider.png" alphatest="blend" transparent="1" scale="1" zPosition="1"/>
         <widget name="quickselect" position="230,140" size="1240,716" backgroundColor="background90" font="Regular;150" halign="center" transparent="1" valign="center" zPosition="5"/>
         <widget name="description" position="230,140" size="1250,60" font="Regular; 28" halign="center" valign="center" backgroundColor="#303030" foregroundColor="yellow" transparent="0"/>
@@ -281,7 +281,7 @@
     <!-- mod mmark 30-12-23 -->
     <screen name="PluginBrowserGrid" position="0,0" size="1920,1080" Title="ATV Plugins" backgroundColor="transparent" flags="wfNoBorder">
                                      
-        <panel name="vButtonTemplate-1500"/>
+        <!-- <panel name="vButtonTemplate-1500"/> -->
         <panel name="Logo"/>
         <ePixmap position="230,10" size="110,110" pixmap="oZetaNSS-FHD/iconsmenu/menu_mainmenu_pluginhider.png" alphatest="blend" transparent="1" scale="1" zPosition="1"/>
         <widget source="Title" render="Label" position="400,7" size="1067,110" font="Mmenu;102" foregroundColor="ltbluette" backgroundColor="#000000" transparent="1" zPosition="5"/>
@@ -342,8 +342,8 @@
 	</widget>
     </screen>
     <screen name="PluginDownloadBrowser" position="0,0" size="1920,1080" Title="ATV Plugins" backgroundColor="transparent" flags="wfNoBorder">
-        <panel name="LayerMenu1500-nl"/>
-        <panel name="bLogo"/>
+        <panel name="LayerMenu1500"/>
+        <!-- <panel name="bLogo"/> -->
         <ePixmap position="230,10" size="110,110" pixmap="oZetaNSS-FHD/iconsmenu/menu_mainmenu_pluginhider.png" alphatest="blend" transparent="1" scale="1" zPosition="1"/>
         <widget name="text" position="230,160" size="0,0" zPosition="1" transparent="1" font="Regular;32" valign="center" halign="center"/>
         <widget name="list" position="230,150" size="1250,760" font="Regular;30" itemHeight="76" scrollbarMode="showOnDemand" scrollbarWidth="10" transparent="1" zPosition="1" backgroundColor="#000000" backgroundColorSelected="#124b97"/>
@@ -2502,7 +2502,7 @@
     <!-- SETUPs Screens -->
     <!-- ************************************* -->
     <screen name="setup_common">
-        <panel name="LayerMenu1500-nl"/>
+        <panel name="LayerMenu1500"/>
         <panel name="vButtonTemplate-1500"/>
         <ePixmap position="230,10" size="110,110" pixmap="oZetaNSS-FHD/iconsmenu/usage_setup.png" alphatest="blend" transparent="1" scale="1" zPosition="1"/>
         <widget name="description" position="230,135" size="1250,105" font="Regular;30" foregroundColor="yellow" halign="center" valign="center" backgroundColor="#202020" transparent="0" zPosition="1"/>

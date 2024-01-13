@@ -13,6 +13,7 @@ from .addons.Utils import RequestAgent
 from Components.AVSwitch import AVSwitch
 from Components.ActionMap import ActionMap
 from Components.ConfigList import ConfigListScreen
+from Components.config import configfile
 from Components.Label import Label
 from Components.Pixmap import Pixmap
 from Components.Sources.StaticText import StaticText
@@ -87,13 +88,13 @@ except:
 
 Uri.imagevers()
 #  config section - ===========
-version = '1.0'
+version = '1.0r1'
 descplug = 'Customization tool for oZeta NSS Skin v.%s' % version
 plugindesc = 'Manage your oZeta NSS Skin v.%s' % version
 iconpic = 'plugin.png'
 sample = mvi + 'enigma2/' + my_cur_skin + '/zSetup/zSample'
 config.ozetanss = ConfigSubsection()
-ozetamenupredefinedlist = []
+# ozetamenupredefinedlist = []
 ozetainfobarpredefinedlist = []
 ozetainfobarsecpredefinedlist = []
 ozetachannelselectionpredefinedlist = []
@@ -102,9 +103,9 @@ ozetaradiopredefinedlist = []
 ozetamediaplayerpredefinedlist = []
 ozetaeventviewpredefinedlist = []
 ozetapluginspredefinedlist = []
-ozetaalogopredefinedlist = []
-ozetablogopredefinedlist = []
-ozetamvipredefinedlist = []
+# ozetaalogopredefinedlist = []
+# ozetablogopredefinedlist = []
+# ozetamvipredefinedlist = []
 
 config.ozetanss.actapi = NoSave(ConfigOnOff(default=False))
 config.ozetanss.data = NoSave(ConfigOnOff(default=False))
@@ -127,7 +128,7 @@ config.ozetanss.zweather = ConfigOnOff(default=False)
 config.ozetanss.weather = NoSave(ConfigSelection(['-> Ok']))
 config.ozetanss.oaweather = NoSave(ConfigSelection(['-> Ok']))
 config.ozetanss.city = ConfigText(default='', visible_width=50, fixed_size=False)
-config.ozetanss.FirstMenuFHD = ConfigSelection(default='Menu Default', choices=ozetamenupredefinedlist)
+# config.ozetanss.FirstMenuFHD = ConfigSelection(default='Menu Default', choices=ozetamenupredefinedlist)
 config.ozetanss.FirstInfobarFHD = ConfigSelection(default='InfoBar Default', choices=ozetainfobarpredefinedlist)
 config.ozetanss.SecondInfobarFHD = ConfigSelection(default='SecondInfoBar Default', choices=ozetainfobarsecpredefinedlist)
 config.ozetanss.ChannSelectorFHD = ConfigSelection(default='Channel Default', choices=ozetachannelselectionpredefinedlist)
@@ -136,9 +137,9 @@ config.ozetanss.RadioFHD = ConfigSelection(default='RadioInfoBar Default', choic
 config.ozetanss.MediaPlayerFHD = ConfigSelection(default='MediaPlayer Default', choices=ozetamediaplayerpredefinedlist)
 config.ozetanss.EventviewFHD = ConfigSelection(default='Eventview Default', choices=ozetaeventviewpredefinedlist)
 config.ozetanss.PluginsFHD = ConfigSelection(default='PluginBrowser Default', choices=ozetapluginspredefinedlist)
-config.ozetanss.LogoaFHD = ConfigSelection(default='TopLogo Default', choices=ozetaalogopredefinedlist)
-config.ozetanss.LogobFHD = ConfigSelection(default='BottomLogo Default', choices=ozetablogopredefinedlist)
-config.ozetanss.Logoboth = ConfigSelection(default='Bootlogo Default', choices=ozetamvipredefinedlist)
+# config.ozetanss.LogoaFHD = ConfigSelection(default='TopLogo Default', choices=ozetaalogopredefinedlist)
+# config.ozetanss.LogobFHD = ConfigSelection(default='BottomLogo Default', choices=ozetablogopredefinedlist)
+# config.ozetanss.Logoboth = ConfigSelection(default='Bootlogo Default', choices=ozetamvipredefinedlist)
 config.ozetanss.XStreamity = NoSave(ConfigSelection(['-> Ok']))
 config.ozetanss.fake = NoSave(ConfigNothing())
 
@@ -153,13 +154,13 @@ if f:
         parts = line.split()
         nssline = parts[0][:-4]
         # print("********** Find %s" % nssline)
-        if 'menu_' in nssline:
-            ozetamenu = nssline[5:].replace("-", " ")
-            ozetamenupredefinedlist.append(ozetamenu)
-        elif 'bootlogo_' in nssline:
-            ozetabootlogo = nssline[9:].replace("-", " ")
-            ozetamvipredefinedlist.append(ozetabootlogo)
-        elif 'infobar_' in nssline:
+        # if 'menu_' in nssline:
+            # ozetamenu = nssline[5:].replace("-", " ")
+            # ozetamenupredefinedlist.append(ozetamenu)
+        # if 'bootlogo_' in nssline:
+            # ozetabootlogo = nssline[9:].replace("-", " ")
+            # ozetamvipredefinedlist.append(ozetabootlogo)
+        if 'infobar_' in nssline:
             ozetainfobar = nssline[8:].replace("-", " ")
             ozetainfobarpredefinedlist.append(ozetainfobar)
         elif 'second_' in nssline:
@@ -183,17 +184,14 @@ if f:
         elif 'plugins_' in nssline:
             ozetaplugins = nssline[8:].replace("-", " ")
             ozetapluginspredefinedlist.append(ozetaplugins)
-        elif 'alogo_' in nssline:
-            ozetalogo = nssline[6:].replace("-", " ")
-            ozetaalogopredefinedlist.append(ozetalogo)
-        else:
-            if'blogo_' in nssline:
-                ozetalogob = nssline[6:].replace("-", " ")
-                ozetablogopredefinedlist.append(ozetalogob)
-    ozetamenupredefinedlist.sort()
-    ozetamvipredefinedlist.sort()
-    ozetaalogopredefinedlist.sort()
-    ozetablogopredefinedlist.sort()
+        # elif 'alogo_' in nssline:
+            # ozetalogo = nssline[6:].replace("-", " ")
+            # ozetaalogopredefinedlist.append(ozetalogo)
+        # else:
+            # if'blogo_' in nssline:
+                # ozetalogob = nssline[6:].replace("-", " ")
+                # ozetablogopredefinedlist.append(ozetalogob)
+    # ozetamenupredefinedlist.sort()
     ozetainfobarpredefinedlist.sort()
     ozetainfobarsecpredefinedlist.sort()
     ozetachannelselectionpredefinedlist.sort()
@@ -202,10 +200,13 @@ if f:
     ozetamediaplayerpredefinedlist.sort()
     ozetaeventviewpredefinedlist.sort()
     ozetapluginspredefinedlist.sort()
-    if ozetamenupredefinedlist and 'Menu Default' in ozetamenupredefinedlist:
-        config.ozetanss.FirstMenuFHD = ConfigSelection(default='Menu Default', choices=ozetamenupredefinedlist)
-    else:
-        config.ozetanss.FirstMenuFHD = ConfigSelection(choices=ozetamenupredefinedlist)
+    # ozetamvipredefinedlist.sort()
+    # ozetaalogopredefinedlist.sort()
+    # ozetablogopredefinedlist.sort()
+    # if ozetamenupredefinedlist and 'Menu Default' in ozetamenupredefinedlist:
+        # config.ozetanss.FirstMenuFHD = ConfigSelection(default='Menu Default', choices=ozetamenupredefinedlist)
+    # else:
+        # config.ozetanss.FirstMenuFHD = ConfigSelection(choices=ozetamenupredefinedlist)
     if ozetainfobarpredefinedlist and 'InfoBar Default' in ozetainfobarpredefinedlist:
         config.ozetanss.FirstInfobarFHD = ConfigSelection(default='InfoBar Default', choices=ozetainfobarpredefinedlist)
     else:
@@ -239,18 +240,18 @@ if f:
     else:
         config.ozetanss.PluginsFHD = ConfigSelection(choices=ozetapluginspredefinedlist)
 
-    if ozetaalogopredefinedlist and 'TopLogo Default' in ozetaalogopredefinedlist:
-        config.ozetanss.LogoaFHD = ConfigSelection(default='TopLogo Default', choices=ozetaalogopredefinedlist)
-    else:
-        config.ozetanss.LogoaFHD = ConfigSelection(choices=ozetaalogopredefinedlist)
-    if ozetablogopredefinedlist and 'BottomLogo Default' in ozetablogopredefinedlist:
-        config.ozetanss.LogobFHD = ConfigSelection(default='BottomLogo Default', choices=ozetablogopredefinedlist)
-    else:
-        config.ozetanss.LogobFHD = ConfigSelection(choices=ozetablogopredefinedlist)
-    if ozetamvipredefinedlist and 'Bootlogo Default' in ozetamvipredefinedlist:
-        config.ozetanss.Logoboth = ConfigSelection(default='Bootlogo Default', choices=ozetamvipredefinedlist)
-    else:
-        config.ozetanss.Logoboth = ConfigSelection(choices=ozetamvipredefinedlist)
+    # if ozetaalogopredefinedlist and 'TopLogo Default' in ozetaalogopredefinedlist:
+        # config.ozetanss.LogoaFHD = ConfigSelection(default='TopLogo Default', choices=ozetaalogopredefinedlist)
+    # else:
+        # config.ozetanss.LogoaFHD = ConfigSelection(choices=ozetaalogopredefinedlist)
+    # if ozetablogopredefinedlist and 'BottomLogo Default' in ozetablogopredefinedlist:
+        # config.ozetanss.LogobFHD = ConfigSelection(default='BottomLogo Default', choices=ozetablogopredefinedlist)
+    # else:
+        # config.ozetanss.LogobFHD = ConfigSelection(choices=ozetablogopredefinedlist)
+    # if ozetamvipredefinedlist and 'Bootlogo Default' in ozetamvipredefinedlist:
+        # config.ozetanss.Logoboth = ConfigSelection(default='Bootlogo Default', choices=ozetamvipredefinedlist)
+    # else:
+        # config.ozetanss.Logoboth = ConfigSelection(choices=ozetamvipredefinedlist)
 
 
 def fakeconfig(name):
@@ -320,14 +321,17 @@ class oZetaNSS(ConfigListScreen, Screen):
         skin = os.path.join(thisdir, 'skin/oZetaNSS.xml')
         with open(skin, 'r') as f:
             self.skin = f.read()
+        self.setup_title = ('oZetaNSS Skin Setup')
+
         self.onChangedEntry = []
         self.list = []
         ConfigListScreen.__init__(self, self.list, session=self.session, on_change=self.changedEntry)
+
         self.skinFileTmp = '%senigma2/%s/zSkin/skin_infochannel.tmp' % (mvi, my_cur_skin)
         self.skinFile = '%senigma2/%s/zSkin/skin_infochannel.xml' % (mvi, my_cur_skin)
         self.chooseFile = '%s/' % sample
         self.getImg = Uri.imagevers()
-        self.setup_title = ('oZetaNSS Skin Setup')
+
         self['Preview'] = Pixmap()
         self['key_red'] = Label(_('Cancel'))
         self['key_green'] = Label(_('Save'))
@@ -352,14 +356,16 @@ class oZetaNSS(ConfigListScreen, Screen):
             self.PicLoad.PictureData.get().append(self.DecodePicture)
         except:
             self.PicLoad_conn = self.PicLoad.PictureData.connect(self.DecodePicture)
+        # self.UpdatePicture()
         self['actions'] = ActionMap([
             'DirectionActions',
             'ColorActions',
+            'EPGSelectActions',
             'MenuActions',
             'NumberActions',
             'OkCancelActions',
             'HelpActions',
-            'InfobarEPGActions',
+            # 'InfobarEPGActions',
             'VirtualKeyboardActions'
         ], {
             'left': self.keyLeft,
@@ -368,8 +374,10 @@ class oZetaNSS(ConfigListScreen, Screen):
             'right': self.keyRight,
             'red': self.zExit,
             'green': self.nssSave,
-            'InfoPressed': self.zHelp,
-            'EPGPressed': self.zHelp,
+            # 'InfoPressed': self.zHelp,
+            'info': self.zHelp,
+            'displayHelp': self.zHelp,
+            # 'EPGPressed': self.zHelp,
             'yellow': self.ShowPictureFull,
             # 'blue': self.zSwitchMode,
             # 'blue': self.keyOpenSkinselector,
@@ -382,11 +390,11 @@ class oZetaNSS(ConfigListScreen, Screen):
         self.createSetup()
         if self.setInfo not in self['config'].onSelectionChanged:
             self['config'].onSelectionChanged.append(self.setInfo)
-
         self.current_skin = config.skin.primary_skin.value
         self.onFirstExecBegin.append(self.check_dependencies)
         self.onLayoutFinish.append(self.__layoutFinished)
-        # self.onLayoutFinish.append(self.layoutFinished)
+        self.onLayoutFinish.append(self.UpdatePicture)
+
     def __layoutFinished(self):
         self.setTitle(self.setup_title)
 
@@ -404,12 +412,13 @@ class oZetaNSS(ConfigListScreen, Screen):
             self.session.openWithCallback(self.layoutFinished, Console, title="Checking Python Dependencies", cmdlist=[cmd1], closeOnSuccess=False)
         else:
             self.layoutFinished()
+
     def layoutFinished(self):
         if os.path.isdir(weatherz):
             self.UpdateComponents()
         self.createSetup()
         self.nssXml()
-        self.UpdatePicture()
+        # self.UpdatePicture()
         self['image'].setText("%s" % Uri.imagevers())
         self['city'].setText("%s" % str(config.ozetanss.city.value))
         self.setTitle(self.setup_title)
@@ -470,10 +479,10 @@ class oZetaNSS(ConfigListScreen, Screen):
         # sep = "-"
         try:
             self.list.append(getConfigListEntry(_("NONSOLOSAT SKIN OPTIONS")))
-            self.list.append(getConfigListEntry(("SKIN PARTS SETUP")))
+            # self.list.append(getConfigListEntry(("SKIN PARTS SETUP")))
             if str(my_cur_skin) == 'oZetaNSS-FHD':
-                if ozetamenupredefinedlist:
-                    self.list.append(getConfigListEntry('Menu:', config.ozetanss.FirstMenuFHD, _("Settings Menu Image Panel")))
+                # if ozetamenupredefinedlist:
+                    # self.list.append(getConfigListEntry('Menu:', config.ozetanss.FirstMenuFHD, _("Settings Menu Image Panel")))
                 if ozetainfobarpredefinedlist:
                     self.list.append(getConfigListEntry('Infobar:', config.ozetanss.FirstInfobarFHD, _("Settings Infobar Panels")))
                 if ozetainfobarsecpredefinedlist:
@@ -490,13 +499,12 @@ class oZetaNSS(ConfigListScreen, Screen):
                     self.list.append(getConfigListEntry('Eventview Panel:', config.ozetanss.EventviewFHD, _("Settings Eventview Panels")))
                 if ozetapluginspredefinedlist:
                     self.list.append(getConfigListEntry('PluginBrowser Panel:', config.ozetanss.PluginsFHD, _("Settings PluginBrowser Panels")))
-                if ozetaalogopredefinedlist:
-                    self.list.append(getConfigListEntry('Logo Image Top:', config.ozetanss.LogoaFHD, _("Settings Logo Image Top")))
-                if ozetablogopredefinedlist:
-                    self.list.append(getConfigListEntry('Logo Image Bottom:', config.ozetanss.LogobFHD, _("Settings Logo Image Bottom")))
-                if ozetamvipredefinedlist:
-                    self.list.append(getConfigListEntry('Bootlogo Image:', config.ozetanss.Logoboth, _("Settings Bootlogo Image\nPress Ok for change")))
-
+                # if ozetaalogopredefinedlist:
+                    # self.list.append(getConfigListEntry('Logo Image Top:', config.ozetanss.LogoaFHD, _("Settings Logo Image Top")))
+                # if ozetablogopredefinedlist:
+                    # self.list.append(getConfigListEntry('Logo Image Bottom:', config.ozetanss.LogobFHD, _("Settings Logo Image Bottom")))
+                # if ozetamvipredefinedlist:
+                    # self.list.append(getConfigListEntry('Bootlogo Image:', config.ozetanss.Logoboth, _("Settings Bootlogo Image\nPress Ok for change")))
                 self.list.append(getConfigListEntry(("SERVER API KEY SETUP")))
                 self.list.append(getConfigListEntry("API KEY SETUP:", config.ozetanss.actapi, _("Settings oZeta Apikey Server")))
                 if config.ozetanss.actapi.value is True:
@@ -512,7 +520,6 @@ class oZetaNSS(ConfigListScreen, Screen):
                     if config.ozetanss.data4.value is True:
                         self.list.append(getConfigListEntry("--Load THETVDB Apikey", config.ozetanss.api4, _("Load THETVDB Apikey from /tmp/thetvdbkey.txt")))
                         self.list.append(getConfigListEntry("--Set THETVDB Apikey", config.ozetanss.txtapi4, _("Signup on THETVDB and input free personal ApiKey")))
-
             self.list.append(getConfigListEntry(("WEATHER BOX SETUP")))
             self.list.append(getConfigListEntry("WEATHER:", config.ozetanss.zweather, _("Settings oZeta Weather")))
             if config.ozetanss.zweather.value is True:
@@ -582,13 +589,14 @@ class oZetaNSS(ConfigListScreen, Screen):
                         pass
                     self["VKeyIcon"].hide()
 
-    def selectionChanged(self):
-        self['status'].setText(self['config'].getCurrent()[0])
+    # def selectionChanged(self):
+        # self['status'].setText(self['config'].getCurrent()[0])
 
     def changedEntry(self):
         self.item = self["config"].getCurrent()
         for x in self.onChangedEntry:
             x()
+
         try:
             if isinstance(self["config"].getCurrent()[1], ConfigYesNo) or isinstance(self["config"].getCurrent()[1], ConfigSelection):
                 self.createSetup()
@@ -702,12 +710,13 @@ class oZetaNSS(ConfigListScreen, Screen):
         self['author'].setText(welcome)
         sel1 = self['config'].getCurrent()[1].value  # InfoBar-Meteo
         selx = self['config'].getCurrent()[0]
+
         if localreturn(selx):
             return
         sel2 = sel1.replace(" ", "-")
         filexml = ''
-        if 'menu' in sel2.lower():
-            filexml = self.chooseFile + 'menu_' + sel2 + '.xml'
+        # if 'menu' in sel2.lower():
+            # filexml = self.chooseFile + 'menu_' + sel2 + '.xml'
         if 'infobar' in sel2.lower():
             filexml = self.chooseFile + 'infobar_' + sel2 + '.xml'
         if 'second' in sel2.lower():
@@ -769,7 +778,7 @@ class oZetaNSS(ConfigListScreen, Screen):
                 PicturePath = ('%sbasefile/%s.jpg' % (thisdir, 'visualweather'))
                 return PicturePath
 
-            c = ['setup', 'autoupdate', ' weather', 'oaweather']
+            c = ['setup', 'autoupdate', ' weather', 'oaweather', 'nonsolosat']
             if xxxx.lower() in c:
                 PicturePath = '%sbasefile/default.jpg' % thisdir
                 return PicturePath
@@ -825,6 +834,7 @@ class oZetaNSS(ConfigListScreen, Screen):
                     self.PicLoad.PictureData.get().append(self.DecodePicture)
                 except:
                     self.PicLoad_conn = self.PicLoad.PictureData.connect(self.DecodePicture)
+            return
 
     def DecodePicture(self, PicInfo=None):
         ptr = self.PicLoad.getData()
@@ -859,7 +869,7 @@ class oZetaNSS(ConfigListScreen, Screen):
 
     def nssSave(self):
         if str(my_cur_skin) == 'oZetaNSS-FHD':
-            menu_file = (self.chooseFile + 'menu_' + config.ozetanss.FirstMenuFHD.value + '.xml').replace(" ", "-")
+            # menu_file = (self.chooseFile + 'menu_' + config.ozetanss.FirstMenuFHD.value + '.xml').replace(" ", "-")
             infobar_file = (self.chooseFile + 'infobar_' + config.ozetanss.FirstInfobarFHD.value + '.xml').replace(" ", "-")
             secinfobar_file = (self.chooseFile + 'second_' + config.ozetanss.SecondInfobarFHD.value + '.xml').replace(" ", "-")
             chansel_file = (self.chooseFile + 'channel_' + config.ozetanss.ChannSelectorFHD.value + '.xml').replace(" ", "-")
@@ -868,8 +878,8 @@ class oZetaNSS(ConfigListScreen, Screen):
             mediaplayer_file = (self.chooseFile + 'mediaplayer_' + config.ozetanss.MediaPlayerFHD.value + '.xml').replace(" ", "-")
             eventview_file = (self.chooseFile + 'eventview_' + config.ozetanss.EventviewFHD.value + '.xml').replace(" ", "-")
             plugins_file = (self.chooseFile + 'plugins_' + config.ozetanss.PluginsFHD.value + '.xml').replace(" ", "-")
-            alogo_file = (self.chooseFile + 'alogo_' + config.ozetanss.LogoaFHD.value + '.xml').replace(" ", "-")
-            blogo_file = (self.chooseFile + 'blogo_' + config.ozetanss.LogobFHD.value + '.xml').replace(" ", "-")
+            # alogo_file = (self.chooseFile + 'alogo_' + config.ozetanss.LogoaFHD.value + '.xml').replace(" ", "-")
+            # blogo_file = (self.chooseFile + 'blogo_' + config.ozetanss.LogobFHD.value + '.xml').replace(" ", "-")
             file_lines = ''
             try:
                 init_file = '%s/basefile/init' % thisdir
@@ -879,15 +889,15 @@ class oZetaNSS(ConfigListScreen, Screen):
                 skFile.close()
                 skFilew = open(self.skinFileTmp, 'w')
                 skFilew.write(file_lines + '\n')
-                if fileExists(menu_file):
-                    print("Menu file %s found, reading....." % menu_file)
-                    menu_file = open(menu_file, 'r')
-                    file_menu = menu_file.read()
-                    skinMenu = mvi + 'enigma2/oZetaNSS-FHD/zSkin/skin_menu.xml'
-                    skFilewM = open(skinMenu, 'w')
-                    skFilewM.write('<?xml version="1.0" encoding="UTF-8"?>\n<skin>\n' + file_menu + '\n</skin>\n')
-                    skFilewM.close()
-                print (infobar_file + "\n#########################")
+                # if fileExists(menu_file):
+                    # print("Menu file %s found, reading....." % menu_file)
+                    # menu_file = open(menu_file, 'r')
+                    # file_menu = menu_file.read()
+                    # skinMenu = mvi + 'enigma2/oZetaNSS-FHD/zSkin/skin_menu.xml'
+                    # skFilewM = open(skinMenu, 'w')
+                    # skFilewM.write('<?xml version="1.0" encoding="UTF-8"?>\n<skin>\n' + file_menu + '\n</skin>\n')
+                    # skFilewM.close()
+                # print (infobar_file + "\n#########################")
                 if fileExists(infobar_file):
                     print("Infobar file %s found, writing....." % infobar_file)
                     skFile = open(infobar_file, 'r')
@@ -950,21 +960,21 @@ class oZetaNSS(ConfigListScreen, Screen):
                     skFile.close()
                     skFilew.write('\n' + file_lines + '\n')
 
-                print (alogo_file + "\n#########################")
-                if fileExists(alogo_file):
-                    print("Logo Top file %s found, writing....." % alogo_file)
-                    skFile = open(alogo_file, 'r')
-                    file_lines = skFile.read()
-                    skFile.close()
-                    skFilew.write('\n' + file_lines + '\n')
+                # print (alogo_file + "\n#########################")
+                # if fileExists(alogo_file):
+                    # print("Logo Top file %s found, writing....." % alogo_file)
+                    # skFile = open(alogo_file, 'r')
+                    # file_lines = skFile.read()
+                    # skFile.close()
+                    # skFilew.write('\n' + file_lines + '\n')
 
-                print (blogo_file + "\n#########################")
-                if fileExists(blogo_file):
-                    print("Logo Bottom file %s found, writing....." % blogo_file)
-                    skFile = open(blogo_file, 'r')
-                    file_lines = skFile.read()
-                    skFile.close()
-                    skFilew.write('\n' + file_lines + '\n')
+                # print (blogo_file + "\n#########################")
+                # if fileExists(blogo_file):
+                    # print("Logo Bottom file %s found, writing....." % blogo_file)
+                    # skFile = open(blogo_file, 'r')
+                    # file_lines = skFile.read()
+                    # skFile.close()
+                    # skFilew.write('\n' + file_lines + '\n')
                 skFilew.write('\n</skin>\n')
                 skFilew.close()
 
@@ -974,39 +984,31 @@ class oZetaNSS(ConfigListScreen, Screen):
                     print("********** Removed %s" % self.skinFile)
                 os.rename(self.skinFileTmp, self.skinFile)
                 print("********** Renamed %s" % self.skinFileTmp)
-                self.saveall()
-
-                # try:
-                    # if self["config"].isChanged():
-                        # for x in self["config"].list:
-                            # if fakeconfig(x):
-                                # continue
-                            # x[1].save()
-                # except Exception as e:
-                    # print('error save:', e)
-
+                self.savecfgall()
                 self.session.open(MessageBox, _('Successfully creating Skin!'), MessageBox.TYPE_INFO, timeout=5)
                 # self.keyOpenSkinselector()
             except Exception as e:
                 print(e)
                 self.session.open(MessageBox, _('Error creating Skin!\nError %s' % e), MessageBox.TYPE_ERROR, timeout=5)
 
-    def saveall(self):
+    def savecfgall(self):
         try:
-            if self["config"].isChanged():
-                for x in self["config"].list:
-                    if fakeconfig(x):
-                        print('fake:', fakeconfig(x))
-                        print('xxxx:', x)
-                        continue
-                    x[1].save()
-                # config.ozetanss.txtapi.save()
-                # config.ozetanss.txtapi2.save()
-                # config.ozetanss.txtapi3.save()
-                # config.ozetanss.txtapi4.save()
-                # config.ozetanss.zweather.save()
-                # config.ozetanss.city.save()
-                config.ozetanss.FirstMenuFHD.save()
+            # if self["config"].isChanged():
+                # for x in self["config"].list:
+                    # # if fakeconfig(x):
+                        # # print('fake:', fakeconfig(x))
+                        # print('xxxx:', x)
+                        # # continue
+                    # # x[1].save()
+                # config.ozetanss.save()
+                # configfile.save()
+                # ######### recover try
+                # # config.ozetanss.txtapi.save()
+                # # config.ozetanss.txtapi2.save()
+                # # config.ozetanss.txtapi3.save()
+                # # config.ozetanss.txtapi4.save()
+                # # config.ozetanss.zweather.save()
+                config.ozetanss.city.save()
                 config.ozetanss.FirstInfobarFHD.save()
                 config.ozetanss.SecondInfobarFHD.save()
                 config.ozetanss.ChannSelectorFHD.save()
@@ -1014,10 +1016,12 @@ class oZetaNSS(ConfigListScreen, Screen):
                 config.ozetanss.RadioFHD.save()
                 config.ozetanss.MediaPlayerFHD.save()
                 config.ozetanss.EventviewFHD.save()
-                config.ozetanss.PluginsFHD.save()
-                config.ozetanss.LogoaFHD.save()
-                config.ozetanss.LogobFHD.save()
-                # config.ozetanss.Logoboth.save()
+                # # config.ozetanss.FirstMenuFHD.save()
+                # # config.ozetanss.PluginsFHD.save()
+                # # config.ozetanss.LogoaFHD.save()
+                # # config.ozetanss.LogobFHD.save()
+                # # config.ozetanss.Logoboth.save()
+
         except Exception as e:
             print('error save:', e)
 
@@ -1136,7 +1140,7 @@ class oZetaNSS(ConfigListScreen, Screen):
             if answer is None:
                 self.session.openWithCallback(self.nssDefault, MessageBox, _("Reset Settings to Defaults Parameters?"))
             else:
-                config.ozetanss.FirstMenuFHD.value = 'Menu Default'
+                # config.ozetanss.FirstMenuFHD.value = 'Menu Default'
                 config.ozetanss.FirstInfobarFHD.value = 'InfoBar Default'
                 config.ozetanss.SecondInfobarFHD.value = 'SecondInfoBar Default'
                 config.ozetanss.ChannSelectorFHD.value = 'Channel Default'
@@ -1145,9 +1149,9 @@ class oZetaNSS(ConfigListScreen, Screen):
                 config.ozetanss.MediaPlayerFHD.value = 'MediaPlayer Default'
                 config.ozetanss.EventviewFHD.value = 'Eventview Default'
                 config.ozetanss.PluginsFHD.value = 'PluginBrowser Default'
-                config.ozetanss.LogoaFHD.value = 'TopLogo Default'
-                config.ozetanss.LogobFHD.value = 'BottomLogo Default'
-                config.ozetanss.Logoboth.value = 'Bootlogo Default'
+                # config.ozetanss.LogoaFHD.value = 'TopLogo Default'
+                # config.ozetanss.LogobFHD.value = 'BottomLogo Default'
+                # config.ozetanss.Logoboth.value = 'Bootlogo Default'
                 self.createSetup()
                 self.UpdatePicture()
 
@@ -1234,7 +1238,6 @@ class oZetaNSS(ConfigListScreen, Screen):
                 self.session.openWithCallback(self.goWeather, MessageBox, _('Data entered for the Weather, do you want to continue the same?'), MessageBox.TYPE_YESNO)
             else:
                 self.goWeather(True)
-
         elif os.path.isdir(theweather):
             locdirsave = "/etc/enigma2/TheWeather_last.cfg"
             location = 'n\A'
@@ -1251,26 +1254,18 @@ class oZetaNSS(ConfigListScreen, Screen):
                 self.createSetup()
             else:
                 return
-                # try:
-                    # from Plugins.Extensions.TheWeather.plugin import getLocWeer, localcityscreen
-                    # self.session.openWithCallback(self.UpdateComponents2, localcityscreen)
-                # except:
-                    # print('passed!!')
-
         else:
             restartbox = self.session.openWithCallback(self.goWeatherInstall, MessageBox, _('Weather Plugin Plugin Not Installed!!\nDo you really want to install now?'), MessageBox.TYPE_YESNO)
             restartbox.setTitle(_('Install Weather Plugin and Reboot'))
         self.UpdatePicture()
 
-
     def theweath(self):
-        if result:
-            try:
-                from .addons import WeatherSearch
-                entry = config.plugins.WeatherPlugin.Entry[0]
-                self.session.openWithCallback(self.UpdateComponents, WeatherSearch.MSNWeatherPluginEntryConfigScreen, entry)
-            except:
-                pass
+        try:
+            from .addons import WeatherSearch
+            entry = config.plugins.WeatherPlugin.Entry[0]
+            self.session.openWithCallback(self.UpdateComponents, WeatherSearch.MSNWeatherPluginEntryConfigScreen, entry)
+        except:
+            pass
 
     def goWeather(self, result=False):
         if result:
@@ -1368,31 +1363,21 @@ class oZetaNSS(ConfigListScreen, Screen):
     def zExit(self):
         self.close()
 
-    # # # def zExit(self, answer=None):
-        # # # if answer is None:
-            # # # self.session.openWithCallback(self.zExit, MessageBox, _("Really close without saving settings?"))
-        # # # elif answer:
-            # # for x in self["config"].list:
-                # # if fakeconfig(x):
-                    # # continue
-                # # x[1].cancel()
-            # # self.close()
-        # # # else:
-            # # # return
-
-
-        # try:
+    # def zExit(self, answer=None):
+        # if answer is None:
             # if self["config"].isChanged():
-                # for x in self["config"].list:
-                    # if fakeconfig(x):
-                        # continue
-                    # x[1].save()
-        # except Exception as e:
-            # print('error save:', e)
-        # self.close()
+                # self.session.openWithCallback(self.zExit, MessageBox, _("Really close without saving settings?"))
+            # else:
+                # self.close()
+        # elif answer:
+            # for x in self["config"].list:
+                # x[1].cancel()
+            # self.close()
+        # return
 
 
 class ozHelp(Screen):
+
     skin = """
               <screen name="ozHelp" position="center,center" size="1700,1000" title="oZeta Skin Help" backgroundColor="#10000000" flags="wfNoBorder">
                     <widget name="helpdesc" position="20,20" font="Regular;28" size="1640,960" halign="left" foregroundColor="#ffffff" backgroundColor="#101010" transparent="1" zPosition="1" />
@@ -1435,18 +1420,21 @@ class ozHelp(Screen):
         conthelp = "Original oZeta Skin"
         conthelp += "Version : " + "%s\n" % version
         conthelp += "License: Open\n\n"
-        conthelp += "Skin Author: Mmark - Info: e2skin.blogspot.it\n\n"
+        conthelp += "Skin Author: Mmark - Info: e2skin.blogspot.it\n"
+        conthelp += "zSetup Base Release: 2.0.0 - 30/06/2022\n"
+        conthelp += "***Coded by Lululla - @Corvoboys ***\n"
         conthelp += "*************************************\n\n"
         conthelp += "Tested on:\n"
-        conthelp += " openATV 7.x - OpenPLi 8.x - OpenSPA\n"
-        conthelp += "edited for NSS Team\n"
-        conthelp += "zSetup Base Release: 2.0.0 - 30/06/2022\n\n"
-        conthelp += "***Coded by Lululla*********\n\n"
+        conthelp += "openATV 7.x - OpenPLi 8.x - OpenSPA\n"
+        conthelp += "edited for NSS Team Image\n"
         conthelp += "Please reports bug or info to blog:\n"
-        conthelp += "http://e2skin.blogspot.com\n\n"
+        conthelp += "http://nonsolosat.net\n\n"
         conthelp += "*************************************\n\n"
-        conthelp += "@Corvoboys\n"
-        conthelp += "***NONSOLOSAT TEAM***"
+        conthelp += "This plugin is NOT free software. It is open source, you are allowed to"
+        conthelp += "modify it (if you keep the license), but it may not be commercially"
+        conthelp += "distributed other than under the conditions noted above."
+        conthelp += "***NONSOLOSAT TEAM***\n"        
+        
         return conthelp
 
     def yellow(self):
@@ -1454,7 +1442,7 @@ class ozHelp(Screen):
         self["helpdesc"].setText(helpdesc)
 
     def yellowcontext(self):
-        conthelp = "HELP ZSETUP PLUGIN \n\n"
+        conthelp = "HELP ZSETUP PLUGIN:\n\n"
         conthelp += (" (RED BUTTON):\n")
         conthelp += _("         Exit zSetup\n\n")
         conthelp += (" (GREEN BUTTON):\n")
@@ -1477,7 +1465,7 @@ class ozHelp(Screen):
         self["helpdesc"].setText(helpdesc)
 
     def greencontext(self):
-        conthelp = "SETTINGS APIKEY: COVER AND WEATHER\n\n"
+        conthelp = "SETTINGS APIKEY: COVER AND WEATHER:\n\n"
         conthelp += ("(OMDB ApiKey):\n")
         conthelp += _("    For use The OMDB Covers, copy the omdbkey file in the skin folder:\n")
         conthelp += _("    /usr/share/enigma2/oZetaNSS-FHD/omdbkey\n")
