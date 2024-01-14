@@ -88,7 +88,7 @@ except:
 
 Uri.imagevers()
 #  config section - ===========
-version = '1.0r1'
+version = '1.0_r1'
 descplug = 'Customization tool for oZeta NSS Skin v.%s' % version
 plugindesc = 'Manage your oZeta NSS Skin v.%s' % version
 iconpic = 'plugin.png'
@@ -120,7 +120,7 @@ config.ozetanss.txtapi3 = ConfigText(default=visual_api, visible_width=50, fixed
 config.ozetanss.data4 = NoSave(ConfigOnOff(default=False))
 config.ozetanss.api4 = NoSave(ConfigSelection(['-> Ok']))
 config.ozetanss.txtapi4 = ConfigText(default=thetvdbkey, visible_width=50, fixed_size=False)
-config.ozetanss.mmpicons = NoSave(ConfigSelection(['-> Ok']))
+# config.ozetanss.mmpicons = NoSave(ConfigSelection(['-> Ok']))
 # config.ozetanss.update = ConfigOnOff(default=False)
 # config.ozetanss.upfind = NoSave(ConfigSelection(['-> Ok']))
 # config.ozetanss.options = NoSave(ConfigSelection(['-> Ok']))
@@ -380,7 +380,7 @@ class oZetaNSS(ConfigListScreen, Screen):
             # 'EPGPressed': self.zHelp,
             'yellow': self.ShowPictureFull,
             # 'blue': self.zSwitchMode,
-            # 'blue': self.keyOpenSkinselector,
+            'blue': self.keyOpenSkinselector,
             'menu': self.KeyMenu,
             'showVirtualKeyboard': self.KeyText,
             'ok': self.keyRun,
@@ -537,7 +537,7 @@ class oZetaNSS(ConfigListScreen, Screen):
                         self.list.append(getConfigListEntry("--Set VISUALWEATHER Apikey", config.ozetanss.txtapi3, _("Signup on www.visualcrossing.com and input free personal ApiKey")))
 
             self.list.append(getConfigListEntry(("MISC SETUP")))
-            self.list.append(getConfigListEntry("Install or Open mmPicons Plugin", config.ozetanss.mmpicons, _("Install or Open mmPicons Plugin\nPress OK")))
+            # self.list.append(getConfigListEntry("Install or Open mmPicons Plugin", config.ozetanss.mmpicons, _("Install or Open mmPicons Plugin\nPress OK")))
             if XStreamity is True:
                 self.list.append(getConfigListEntry('Install Options XStreamity Skin', config.ozetanss.XStreamity, _("Install Optional XStreamity Skin\nPress Ok")))
 
@@ -631,20 +631,21 @@ class oZetaNSS(ConfigListScreen, Screen):
             self.keyApi4()
         if sel and sel == config.ozetanss.txtapi4:
             self.KeyText()
-        if sel and sel == config.ozetanss.mmpicons:
-            self.mmWaitReload()
+        # if sel and sel == config.ozetanss.mmpicons:
+            # self.mmWaitReload()
         if sel and sel == config.ozetanss.XStreamity:
             self.zXStreamity()
-        if sel and sel == config.ozetanss.Logoboth:
-            self.zLogoboth(None)
         if sel and sel == config.ozetanss.weather:
             self.KeyMenu()
         if sel and sel == config.ozetanss.oaweather:
             self.KeyMenu2()
         if sel and sel == config.ozetanss.city:
             self.KeyText()
+        # if sel and sel == config.ozetanss.Logoboth:
+            # self.zLogoboth(None)
         else:
             return
+        return
 
     def zXStreamity(self, answer=None):
         if XStreamity is True:
@@ -791,8 +792,8 @@ class oZetaNSS(ConfigListScreen, Screen):
                 PicturePath = ('%sbasefile/%s.jpg' % (thisdir, 'visualweather'))
             if sel and sel == config.ozetanss.data4:
                 PicturePath = ('%sbasefile/%s.jpg' % (thisdir, 'thetvdb'))
-            if sel and sel == config.ozetanss.mmpicons:
-                PicturePath = ('%sbasefile/%s.jpg' % (thisdir, 'mmPicons'))
+            # if sel and sel == config.ozetanss.mmpicons:
+                # PicturePath = ('%sbasefile/%s.jpg' % (thisdir, 'mmPicons'))
             if sel and sel == config.ozetanss.api:
                 PicturePath = ('%sbasefile/%s.jpg' % (thisdir, 'API-Apikey'))
             if sel and sel == config.ozetanss.txtapi:
@@ -1025,14 +1026,14 @@ class oZetaNSS(ConfigListScreen, Screen):
         except Exception as e:
             print('error save:', e)
 
-    def mmWaitReload(self):
-        self.Timer = eTimer()
-        try:
-            self.Timer.callback.append(self.zMMpicons)
-        except:
-            self.Timer_conn = self.Timer.timeout.connect(self.zMMpicons)
-        self.Timer.start(2000, 1)
-        self.createSetup()
+    # def mmWaitReload(self):
+        # self.Timer = eTimer()
+        # try:
+            # self.Timer.callback.append(self.zMMpicons)
+        # except:
+            # self.Timer_conn = self.Timer.timeout.connect(self.zMMpicons)
+        # self.Timer.start(2000, 1)
+        # self.createSetup()
 
     def KeyText(self):
         from Screens.VirtualKeyBoard import VirtualKeyBoard
@@ -1212,20 +1213,20 @@ class oZetaNSS(ConfigListScreen, Screen):
     def errorLoad(self):
         print('error: errorLoad')
 
-# import mmpicons plugin OK work
-    def zMMpicons(self):
-        mmpiconz = resolveFilename(SCOPE_PLUGINS, "Extensions/{}".format('mmPicons'))
-        if os.path.isdir(mmpiconz):
-            from Plugins.Extensions.mmPicons.plugin import SelectPicons
-            self.session.open(SelectPicons)
-        else:
-            try:
-                restartbox = self.session.openWithCallback(Uri.zPicons, MessageBox, _('mmPicons Plugin Not Installed!!\nDo you really want to install now?'), MessageBox.TYPE_YESNO)
-                restartbox.setTitle(_('Install mmPicons'))
-                print('mmPicons - Done!!!')
-                self.createSetup()
-            except Exception as e:
-                print('error download ', e)
+# # import mmpicons plugin OK work
+    # def zMMpicons(self):
+        # mmpiconz = resolveFilename(SCOPE_PLUGINS, "Extensions/{}".format('mmPicons'))
+        # if os.path.isdir(mmpiconz):
+            # from Plugins.Extensions.mmPicons.plugin import SelectPicons
+            # self.session.open(SelectPicons)
+        # else:
+            # try:
+                # restartbox = self.session.openWithCallback(Uri.zPicons, MessageBox, _('mmPicons Plugin Not Installed!!\nDo you really want to install now?'), MessageBox.TYPE_YESNO)
+                # restartbox.setTitle(_('Install mmPicons'))
+                # print('mmPicons - Done!!!')
+                # self.createSetup()
+            # except Exception as e:
+                # print('error download ', e)
 
 # weather search
 # config.plugins.ozeta.zweather = ConfigOnOff(default=False)
@@ -1259,13 +1260,13 @@ class oZetaNSS(ConfigListScreen, Screen):
             restartbox.setTitle(_('Install Weather Plugin and Reboot'))
         self.UpdatePicture()
 
-    def theweath(self):
-        try:
-            from .addons import WeatherSearch
-            entry = config.plugins.WeatherPlugin.Entry[0]
-            self.session.openWithCallback(self.UpdateComponents, WeatherSearch.MSNWeatherPluginEntryConfigScreen, entry)
-        except:
-            pass
+    # def theweath(self):
+        # try:
+            # from .addons import WeatherSearch
+            # entry = config.plugins.WeatherPlugin.Entry[0]
+            # self.session.openWithCallback(self.UpdateComponents, WeatherSearch.MSNWeatherPluginEntryConfigScreen, entry)
+        # except:
+            # pass
 
     def goWeather(self, result=False):
         if result:
@@ -1421,20 +1422,21 @@ class ozHelp(Screen):
         conthelp += "Version : " + "%s\n" % version
         conthelp += "License: Open\n\n"
         conthelp += "Skin Author: Mmark - Info: e2skin.blogspot.it\n"
-        conthelp += "zSetup Base Release: 2.0.0 - 30/06/2022\n"
-        conthelp += "***Coded by Lululla - @Corvoboys ***\n"
-        conthelp += "*************************************\n\n"
         conthelp += "Tested on:\n"
         conthelp += "openATV 7.x - OpenPLi 8.x - OpenSPA\n"
-        conthelp += "edited for NSS Team Image\n"
+        conthelp += "zSetup Base Release: 2.0.0 - 30/06/2022\n"
+        conthelp += "***Coded by @Lululla - @Corvoboys ***\n"
+        conthelp += "*************************************\n\n"
+        conthelp += "*SETUP FOR OZETA NSS TEAM*\n\n"
+        conthelp += "edited for NONSOLOSAT Image\n"
         conthelp += "Please reports bug or info to blog:\n"
         conthelp += "http://nonsolosat.net\n\n"
         conthelp += "*************************************\n\n"
         conthelp += "This plugin is NOT free software. It is open source, you are allowed to"
         conthelp += "modify it (if you keep the license), but it may not be commercially"
-        conthelp += "distributed other than under the conditions noted above."
-        conthelp += "***NONSOLOSAT TEAM***\n"        
-        
+        conthelp += "distributed other than under the conditions noted above.\n\n"
+        conthelp += "***NONSOLOSAT TEAM***\n"
+
         return conthelp
 
     def yellow(self):

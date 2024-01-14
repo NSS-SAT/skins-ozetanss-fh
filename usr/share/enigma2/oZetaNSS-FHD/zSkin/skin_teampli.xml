@@ -798,7 +798,7 @@
         </widget>
     </screen>
     <screen name="MenuTemplate">
-        <panel name="LayerMenu1000-nl"/>
+        <panel name="LayerMenu1000"/>
         <panel name="vButtonTemplate-1000"/>
         <panel name="bLogo"/>
         <widget source="menu" render="Listbox" position="230,150" size="810,780" font="Regular;36" backgroundColor="#000000" foregroundColor="#ffffff" backgroundColorSelected="barColor" foregroundColorSelected="#ffffff" scrollbarMode="showNever" enableWrapAround="1" transparent="1">

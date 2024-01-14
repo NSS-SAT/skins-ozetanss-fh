@@ -45,17 +45,25 @@ def isMountReadonly(mnt):
     return "mount: '%s' doesn't exist" % mnt
 
 
+def isMountedInRW(path):
+    testfile = path + '/tmp-rw-test'
+    os.system('touch ' + testfile)
+    if os.path.exists(testfile):
+        os.system('rm -f ' + testfile)
+        return True
+    return False
+
+
 path_folder = "/tmp/poster"
 if os.path.exists("/media/hdd"):
-    if not isMountReadonly("/media/hdd"):
+    if isMountedInRW("/media/hdd"):
         path_folder = "/media/hdd/poster"
-elif os.path.exists("/media/usb"):
-    if not isMountReadonly("/media/usb"):
+if os.path.exists("/media/usb"):
+    if isMountedInRW("/media/usb"):
         path_folder = "/media/usb/poster"
-elif os.path.exists("/media/mmc"):
-    if not isMountReadonly("/media/mmc"):
+if os.path.exists("/media/mmc"):
+    if isMountedInRW("/media/mmc"):
         path_folder = "/media/mmc/poster"
-
 if not os.path.exists(path_folder):
     os.makedirs(path_folder)
 

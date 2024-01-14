@@ -78,17 +78,25 @@ def isMountReadonly(mnt):
     return "mount: '%s' doesn't exist" % mnt
 
 
+def isMountedInRW(path):
+    testfile = path + '/tmp-rw-test'
+    os.system('touch ' + testfile)
+    if os.path.exists(testfile):
+        os.system('rm -f ' + testfile)
+        return True
+    return False
+
+
 path_folder = "/tmp/poster"
 if os.path.exists("/media/hdd"):
-    if not isMountReadonly("/media/hdd"):
+    if isMountedInRW("/media/hdd"):
         path_folder = "/media/hdd/poster"
-elif os.path.exists("/media/usb"):
-    if not isMountReadonly("/media/usb"):
+if os.path.exists("/media/usb"):
+    if isMountedInRW("/media/usb"):
         path_folder = "/media/usb/poster"
-elif os.path.exists("/media/mmc"):
-    if not isMountReadonly("/media/mmc"):
+if os.path.exists("/media/mmc"):
+    if isMountedInRW("/media/mmc"):
         path_folder = "/media/mmc/poster"
-
 if not os.path.exists(path_folder):
     os.makedirs(path_folder)
 
@@ -100,15 +108,9 @@ apdb = dict()
 try:
     lng = config.osd.language.value
     lng = lng[:-3]
-                                              
-                
-                                  
 except:
     lng = 'en'
     pass
-                          
-                              
-                  
 
 
 # SET YOUR PREFERRED BOUQUET FOR AUTOMATIC POSTER GENERATION
@@ -275,7 +277,6 @@ def convtext(text=''):
             text = text.partition(" -")[0]  # .strip()
             # text = re.sub(r'(?:\d+\s\odc\.\d+\s)?(.+)+.*?FIN', '', text)
             print('2 my test:', text)
-
             text = re.sub(' - +.+?FIN', '', text)  # all episodes and series ????
             text = re.sub('FIN', '', text)
             print('[(02)] ', text)
@@ -433,7 +434,7 @@ class PosterAutoDB(zPosterXDownloadThread):
                                 val, log = self.search_google(dwn_poster, pstcanal, canal[4], canal[3], canal[0])
                                 if val and log.find("SUCCESS"):
                                     newfd += 1
-                        newcn = canal[0]
+                            newcn = canal[0]
                         self.logAutoDB("[AutoDB] {} new file(s) added ({})".format(newfd, newcn))
                 except Exception as e:
                     self.logAutoDB("[AutoDB] *** service error ({})".format(e))
@@ -610,7 +611,7 @@ class zPosterX(Renderer):
                 time.sleep(0.5)
                 loop = loop - 1
             if found:
-                self.timer.start(10, True)
+                self.timer.start(20, True)
 
     def logPoster(self, logmsg):
         try:

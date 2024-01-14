@@ -2675,7 +2675,7 @@
     <!-- VLC Player 057/03 -->
     <screen name="VlcMediaListScreen" position="0,0" size="1920,1080" title="VLC MediaList" flags="wfNoBorder" backgroundColor="transparent">
         <panel name="LayerMenu1000-nl"/>
-        <panel name="vButtonTemplate-m1000"/>
+        <panel name="cvRGYB"/>
         <widget name="filelist_button_sel" position="230,150" size="250,30" pixmap="buttons/grey.png" scale="1" alphatest="on" zPosition="1"/>
         <widget name="playlist_button_sel" position="500,150" size="250,30" pixmap="buttons/blue.png" scale="1" alphatest="on" zPosition="1"/>
         <widget name="filelist_text" position="230,150" halign="center" font="Regular;24" valign="center" transparent="1" size="250,30" backgroundColor="#25062748" zPosition="2"/>
@@ -3106,7 +3106,7 @@
     </screen>
     <!-- [068] MMPicons 068/02 -->
     <screen name="SelectPicons" position="0,0" size="1920,1080" title="mMark Picons Manager" backgroundColor="#FF000000" flags="wfNoBorder">
-        <panel name="LayerMenu1500-nl"/>
+        <panel name="LayerMenu1500"/>
         <panel name="ButtonTemplate"/>
         <widget name="poster" position="230,30" size="130,80" backgroundColor="#30000000" transparent="1" borderWidth="3" borderColor="#00ffffff" alphatest="blend" zPosition="4"/>
         <widget name="text" position="230,192" scrollbarMode="showOnDemand" size="1250,600" itemHeight="50" zPosition="4" backgroundColor="#000000" transparent="1" scrollbarWidth="10" backgroundColorSelected="barColor"/>

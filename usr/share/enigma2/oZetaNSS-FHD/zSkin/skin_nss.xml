@@ -19,6 +19,17 @@
     <!-- *************************************** -->
     <!--  NSS PANELS                           * -->
     <!-- *************************************** -->
+    <!-- *** oZeta - XML Version 2.27 Top Logo Team By zSetup v2.0.0 *** -->
+    <!-- Author mmark : Modules : TopLogo Zeta Default -->
+    <screen name="Logo">
+        <ePixmap position="230,10" size="160,110" pixmap="oZetaNSS-FHD/menu/back10.png" scale="1" zPosition="10"/>
+        <ePixmap position="220,32" size="160,81" pixmap="oZetaNSS-FHD/menu/Logo/Zeta-Logo.png" alphatest="blend" transparent="1" zPosition="20"/>
+    </screen>
+    <!-- *** oZeta - XML Version 2.27 Bottom Logo Team By zSetup v2.0.0 *** -->
+    <!-- Author mmark : Modules : Bottom Logo Zeta Default -->
+    <screen name="bLogo">
+        <ePixmap position="230,980" size="500,90" pixmap="oZetaNSS-FHD/menu/Logo/bLogo-Zeta.png" alphatest="blend" transparent="1" zPosition="1"/>
+    </screen>
     <!-- ************* NSS Panels ************* -->
     <screen name="NssMenu" position="0,0" size="1920,1080" title="NSS Panel" backgroundColor="#ff000000" flags="wfNoBorder">
         <panel name="LayerMenu1000"/>
