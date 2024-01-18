@@ -13,7 +13,6 @@ from .addons.Utils import RequestAgent
 from Components.AVSwitch import AVSwitch
 from Components.ActionMap import ActionMap
 from Components.ConfigList import ConfigListScreen
-from Components.config import configfile
 from Components.Label import Label
 from Components.Pixmap import Pixmap
 from Components.Sources.StaticText import StaticText
@@ -88,7 +87,7 @@ except:
 
 Uri.imagevers()
 #  config section - ===========
-version = '1.0r1'
+version = '1.0'
 descplug = 'Customization tool for oZeta NSS Skin v.%s' % version
 plugindesc = 'Manage your oZeta NSS Skin v.%s' % version
 iconpic = 'plugin.png'
@@ -713,8 +712,8 @@ class oZetaNSS(ConfigListScreen, Screen):
             return
         sel2 = sel1.replace(" ", "-")
         filexml = ''
-        # if 'menu' in sel2.lower():
-            # filexml = self.chooseFile + 'menu_' + sel2 + '.xml'
+        if 'menu' in sel2.lower():
+            filexml = self.chooseFile + 'menu_' + sel2 + '.xml'
         if 'infobar' in sel2.lower():
             filexml = self.chooseFile + 'infobar_' + sel2 + '.xml'
         if 'second' in sel2.lower():
@@ -983,6 +982,13 @@ class oZetaNSS(ConfigListScreen, Screen):
                 os.rename(self.skinFileTmp, self.skinFile)
                 print("********** Renamed %s" % self.skinFileTmp)
                 self.savecfgall()
+                # self.saveAll()
+                # if self["config"].isChanged():
+                    # for x in self["config"].list:
+                        # x[1].save()
+                    # config.ozetanss.save()
+                    # configfile.save()
+                
                 self.session.open(MessageBox, _('Successfully creating Skin!'), MessageBox.TYPE_INFO, timeout=5)
                 # self.keyOpenSkinselector()
             except Exception as e:
@@ -991,22 +997,30 @@ class oZetaNSS(ConfigListScreen, Screen):
 
     def savecfgall(self):
         try:
+        
             # if self["config"].isChanged():
+                # for x in self["config"].list:
+                    # x[1].save()
+                # config.ozetanss.save()
+                # configfile.save()
+                
+            # if self["config"].isChanged():
+                # for i in range(len(self["config"].list)):
+                    # print(i)
                 # for x in self["config"].list:
                     # # if fakeconfig(x):
                         # # print('fake:', fakeconfig(x))
                         # print('xxxx:', x)
                         # # continue
-                    # # x[1].save()
-                # config.ozetanss.save()
-                # configfile.save()
-                # ######### recover try
+                # # x[1].save()
                 # # config.ozetanss.txtapi.save()
                 # # config.ozetanss.txtapi2.save()
                 # # config.ozetanss.txtapi3.save()
                 # # config.ozetanss.txtapi4.save()
                 # # config.ozetanss.zweather.save()
-                config.ozetanss.city.save()
+                # config.ozetanss.city.save()
+
+                # config.ozetanss.FirstMenuFHD.save()
                 config.ozetanss.FirstInfobarFHD.save()
                 config.ozetanss.SecondInfobarFHD.save()
                 config.ozetanss.ChannSelectorFHD.save()
@@ -1014,12 +1028,11 @@ class oZetaNSS(ConfigListScreen, Screen):
                 config.ozetanss.RadioFHD.save()
                 config.ozetanss.MediaPlayerFHD.save()
                 config.ozetanss.EventviewFHD.save()
-                # # config.ozetanss.FirstMenuFHD.save()
                 # # config.ozetanss.PluginsFHD.save()
                 # # config.ozetanss.LogoaFHD.save()
                 # # config.ozetanss.LogobFHD.save()
                 # # config.ozetanss.Logoboth.save()
-
+                
         except Exception as e:
             print('error save:', e)
 
@@ -1358,21 +1371,42 @@ class oZetaNSS(ConfigListScreen, Screen):
         except:
             pass
 
-    def zExit(self):
-        self.close()
+    # def zExit(self):
+        # self.close()
 
-    # def zExit(self, answer=None):
-        # if answer is None:
+    def zExit(self, answer=None):
+        if answer is None:
+            if self["config"].isChanged():
+                self.session.openWithCallback(self.cancel, MessageBox, _("Really close without saving settings?"))
+            else:
+                self.close()
+        elif answer:
+            for x in self["config"].list:
+                x[1].cancel()
+            self.close()
+        return
+
+    # # # def zExit(self, answer=None):
+        # # # if answer is None:
+            # # # self.session.openWithCallback(self.zExit, MessageBox, _("Really close without saving settings?"))
+        # # # elif answer:
+            # # for x in self["config"].list:
+                # # if fakeconfig(x):
+                    # # continue
+                # # x[1].cancel()
+            # # self.close()
+        # # # else:
+            # # # return
+
+        # try:
             # if self["config"].isChanged():
-                # self.session.openWithCallback(self.zExit, MessageBox, _("Really close without saving settings?"))
-            # else:
-                # self.close()
-        # elif answer:
-            # for x in self["config"].list:
-                # x[1].cancel()
-            # self.close()
-        # return
-
+                # for x in self["config"].list:
+                    # if fakeconfig(x):
+                        # continue
+                    # x[1].save()
+        # except Exception as e:
+            # print('error save:', e)
+        # self.close()
 
 class ozHelp(Screen):
 

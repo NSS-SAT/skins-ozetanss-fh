@@ -78,25 +78,17 @@ def isMountReadonly(mnt):
     return "mount: '%s' doesn't exist" % mnt
 
 
-def isMountedInRW(path):
-    testfile = path + '/tmp-rw-test'
-    os.system('touch ' + testfile)
-    if os.path.exists(testfile):
-        os.system('rm -f ' + testfile)
-        return True
-    return False
-
-
 path_folder = "/tmp/poster"
 if os.path.exists("/media/hdd"):
-    if isMountedInRW("/media/hdd"):
+    if not isMountReadonly("/media/hdd"):
         path_folder = "/media/hdd/poster"
-if os.path.exists("/media/usb"):
-    if isMountedInRW("/media/usb"):
+elif os.path.exists("/media/usb"):
+    if not isMountReadonly("/media/usb"):
         path_folder = "/media/usb/poster"
-if os.path.exists("/media/mmc"):
-    if isMountedInRW("/media/mmc"):
+elif os.path.exists("/media/mmc"):
+    if not isMountReadonly("/media/mmc"):
         path_folder = "/media/mmc/poster"
+
 if not os.path.exists(path_folder):
     os.makedirs(path_folder)
 
@@ -364,7 +356,7 @@ class zStarX(VariableValue, Renderer):
                                 except Exception as e:
                                     print('pass Exception:', e)
                     except Exception as e:
-                        print('Exception no ids in zstar ', e)
+                        print('Exception no ids in zstar ', e)                                        
                 # if os.path.exists(dwn_infos):
                 else:
                     try:
