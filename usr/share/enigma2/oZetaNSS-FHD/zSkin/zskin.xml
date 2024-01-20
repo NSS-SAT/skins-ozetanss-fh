@@ -70,7 +70,7 @@
         <eLabel position="230,250" size="1250,3" backgroundColor="#202020" zPosition="1"/>
         <widget name="config" position="230,260" size="1250,600" itemHeight="50" font="screen_text;30" scrollbarSliderBorderWidth="1" scrollbarMode="showOnDemand" enableWrapAround="1" backgroundColor="#000000" foregroundColor="#ffffff" backgroundColorSelected="barColor" foregroundColorSelected="yellow" transparent="1"/>
         <widget name="HelpWindow" position="1300,10" size="486,102" zPosition="1" transparent="1" alphatest="blend"/>
-        <widget name="footnote" position="230,900" size="1010,50" font="Regular;24" halign="right" valign="center" backgroundColor="#000000" foregroundColor="yellow" transparent="1"/>
+        <!-- <widget name="footnote" position="230,900" size="1010,50" font="Regular;24" halign="right" valign="center" backgroundColor="#000000" foregroundColor="yellow" transparent="1"/> -->
     </screen>
     <!-- Simple channelselection -->
     <screen name="SimpleChannelSelection" title="Channel Selection" position="0,0" size="1920,1080" backgroundColor="#FF000000" flags="wfNoBorder">
@@ -1090,7 +1090,7 @@
         <widget name="config" position="410,150" size="1060,120" itemHeight="40" font="Regular;30" scrollbarMode="showOnDemand" scrollbarWidth="10" backgroundColor="#000000" transparent="1" backgroundColorSelected="#124b97"/>
         <eLabel position="230,280" size="1250,3" backgroundColor="#303030" zPosition="1"/>
         <widget name="info" position="230,330" size="1250,469" font="Regular;28" foregroundColor="white" backgroundColor="#000000" transparent="1" zPosition="2"/>
-        <widget name="footnote" position="186,1108" size="1000,100" font="Regular; 28" transparent="1"/>
+        <!-- <widget name="footnote" position="186,1108" size="1000,100" font="Regular; 28" transparent="1"/> -->
         <widget name="description" position="231,807" size="1250,149" font="Regular; 26" halign="center" valign="center" foregroundColor="yellow" backgroundColor="#000000" transparent="1" />
         <ePixmap position="1400,985" size="80,40" pixmap="buttons/80/key_menu.png" zPosition="5" alphatest="blend"/>
         <!-- add lululla -->
@@ -1108,7 +1108,7 @@
         <widget name="config" position="410,150" size="630,120" itemHeight="40" font="Regular;30" scrollbarMode="showOnDemand" scrollbarWidth="10" backgroundColor="#000000" transparent="1" backgroundColorSelected="#124b97"/>
         <eLabel position="230,280" size="810,3" backgroundColor="#303030" zPosition="1"/>
         <widget name="info" position="230,330" size="810,469" font="Regular;28" foregroundColor="yellow" backgroundColor="#000000" transparent="1" zPosition="2"/>
-        <widget name="footnote" position="186,1108" size="1000,100" font="Regular; 28" transparent="1"/>
+        <!-- <widget name="footnote" position="186,1108" size="1000,100" font="Regular; 28" transparent="1"/> -->
         <widget name="description" position="231,807" size="810,149" font="Regular; 28" transparent="1" foregroundColor="yellow"/>
         <!-- add lululla -->
         <widget name="actifcam" font="Regular;20" position="280,288" size="350,32" halign="center"/>
@@ -2512,7 +2512,7 @@
         <eLabel position="230,250" size="1250,3" backgroundColor="#202020" zPosition="1"/>
         <widget name="config" position="230,260" size="1250,650" itemHeight="50" font="Regular;32" foregroundColor="#ffffff" backgroundColor="#000000" scrollbarSliderBorderWidth="1" scrollbarWidth="10" enableWrapAround="1" scrollbarMode="showOnDemand" scrollbarSliderForegroundColor="ltbluette" scrollbarSliderBorderColor="#b0b0b0" backgroundColorSelected="barColor" foregroundColorSelected="white" transparent="1"/>
         <widget name="HelpWindow" position="230,700" size="486,102" zPosition="1" transparent="1" alphatest="blend"/>
-        <widget name="footnote" position="230,800" size="0,0" font="Regular;28" halign="right" valign="center" backgroundColor="#202020" foregroundColor="yellow" transparent="0"/>
+        <!-- <widget name="footnote" position="230,800" size="0,0" font="Regular;28" halign="right" valign="center" backgroundColor="#202020" foregroundColor="yellow" transparent="0"/> -->
     </screen>
     <!-- Setup Info -->
     <screen name="SetupInfo" position="0,0" size="1920,1080" title="Setup" flags="wfNoBorder" backgroundColor="transparent">

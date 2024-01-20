@@ -421,7 +421,7 @@
     <screen name="TranscodingSetup" position="0,0" size="1920,1080" Title="Transcoding Setup" backgroundColor="transparent" flags="wfNoBorder">
         <panel name="LayerMenu1000-nl" zPosition="4"/>
         <panel name="ButtonTemplate"/>
-        <widget name="config" position="230,150" size="810,700" font="Regular;30" itemHeight="50" scrollbarMode="showOnDemand" scrollbarWidth="10" selectionpixmap="oZetaNSS-FHD/menu/sl1000.png" transparent="1" zPosition="5"/>
+        <widget name="config" position="230,150" size="810,700" font="Regular;30" itemHeight="50" scrollbarMode="showOnDemand" scrollbarWidth="10" selectionPixmap="oZetaNSS-FHD/menu/sl1000.png" transparent="1" zPosition="5"/>
     </screen>
     <!-- [009] Plugin CCCam 009/01 -->
     <screen name="EcmInfoScreen" position="0,0" size="1920,50" flags="wfNoBorder" zPosition="10" backgroundColor="#FF000000">
@@ -1900,7 +1900,7 @@
     <screen name="NetworkPassword" position="0,0" size="1920,1080" title="Password" backgroundColor="transparent" flags="wfNoBorder">
         <panel name="LayerMenu1500"/>
         <panel name="ButtonTemplate"/>
-        <widget name="footnote" position="220,150" size="1250,50" font="Regular;30" halign="center" valign="center" foregroundColor="yellow" backgroundColor="#202020" transparent="0" zPosition="1"/>
+        <!-- <widget name="footnote" position="220,150" size="1250,50" font="Regular;30" halign="center" valign="center" foregroundColor="yellow" backgroundColor="#202020" transparent="0" zPosition="1"/> -->
         <eLabel position="220,210" size="1250,3" backgroundColor="#202020" zPosition="1"/>
         <widget name="config" position="220,220" size="1250,600" font="Regular;30" itemHeight="50" scrollbarMode="showOnDemand" scrollbarSliderForegroundColor="ltbluette" backgroundColorSelected="barColor" backgroundColor="#000000" transparent="1" zPosition="10"/>
         <widget source="VKeyIcon" render="Pixmap" position="960,910" size="80,40" conditional="VKeyIcon" pixmap="oZetaNSS-FHD/skin_default/buttons/80/key_text.png" alphatest="blend" transparent="1" zPosition="1">
@@ -2116,7 +2116,7 @@
         <widget source="Event" render="Label" position="640,640" size="705,40" backgroundColor="background" transparent="1" foregroundColor="secondFG" font="Regular;33" valign="top">
             <convert type="EventName">Name</convert>
         </widget>
-        <widget source="Event" render="Progress" pixmap="oZetaNSS-FHD/infobar/pbar.png" position="410,685" size="1480,5" transparent="0" borderWidth="0" backgroundColor="#303030">
+        <widget source="Event" render="Progress" pixmap="oZetaNSS-FHD/icons/pbar.png" position="410,685" size="1480,5" transparent="0" borderWidth="0" backgroundColor="#303030">
             <convert type="EventTime">Progress</convert>
         </widget>
         <widget source="Event" render="Label" position="30,705" size="1860,260" backgroundColor="background" transparent="1" font="Regular;28" halign="block">
@@ -3621,12 +3621,12 @@
         <widget name="banner" position="1005,104" size="899,157" alphatest="on" transparent="1" scale="1" zPosition="21"/>
         <widget name="episodes" position="1025,290" size="860,300" scrollbarMode="showNever" transparent="1" zPosition="21"/>
         <widget name="seasons" position="1025,290" size="860,300" scrollbarMode="showNever" transparent="1" zPosition="20"/>
-        <widget name="audiotype" position="1455,730" size="120,57" pixmaps="/usr/lib/enigma2/python/Plugins/Extensions/MovieBrowser/pic/browser/dolby.png,/usr/lib/enigma2/python/Plugins/Extensions/MovieBrowser/pic/browser/dolbyplus.png,/usr/lib/enigma2/python/Plugins/Extensions/MovieBrowser/pic/browser/dts.png,/usr/lib/enigma2/python/Plugins/Extensions/MovieBrowser/pic/browser/dtshd.png,/usr/lib/enigma2/python/Plugins/Extensions/MovieBrowser/pic/browser/mp2.png" transparent="1" alphatest="blend" zPosition="21"/>
-        <widget name="videomode" position="1590,730" size="75,57" pixmaps="/usr/lib/enigma2/python/Plugins/Extensions/MovieBrowser/pic/browser/1080.png,/usr/lib/enigma2/python/Plugins/Extensions/MovieBrowser/pic/browser/720.png,/usr/lib/enigma2/python/Plugins/Extensions/MovieBrowser/pic/browser/480.png" transparent="1" alphatest="blend" zPosition="21"/>
-        <widget name="videocodec" position="1680,730" size="120,57" pixmaps="/usr/lib/enigma2/python/Plugins/Extensions/MovieBrowser/pic/browser/h264.png,/usr/lib/enigma2/python/Plugins/Extensions/MovieBrowser/pic/browser/mpeg2.png,/usr/lib/enigma2/python/Plugins/Extensions/MovieBrowser/pic/browser/divx.png,/usr/lib/enigma2/python/Plugins/Extensions/MovieBrowser/pic/browser/flv.png,/usr/lib/enigma2/python/Plugins/Extensions/MovieBrowser/pic/browser/dvd.png" transparent="1" alphatest="blend" zPosition="21"/>
-        <widget name="aspectratio" position="1815,730" size="75,57" pixmaps="/usr/lib/enigma2/python/Plugins/Extensions/MovieBrowser/pic/browser/16_9.png,/usr/lib/enigma2/python/Plugins/Extensions/MovieBrowser/pic/browser/4_3.png" transparent="1" alphatest="blend" zPosition="21"/>
-        <widget name="ddd" position="1815,730" size="75,57" pixmap="/usr/lib/enigma2/python/Plugins/Extensions/MovieBrowser/pic/browser/ddd.png" transparent="1" alphatest="blend" zPosition="21"/>
-        <widget name="ddd2" position="1365,730" size="75,57" pixmap="/usr/lib/enigma2/python/Plugins/Extensions/MovieBrowser/pic/browser/ddd.png" transparent="1" alphatest="blend" zPosition="21"/>
+        <widget name="audiotype" position="1455,730" size="120,57" pixmaps="/usr/lib/enigma2/python/Plugins/Extensions/MovieBrowser/skin/fhd/pic/browser/dolby.png,/usr/lib/enigma2/python/Plugins/Extensions/MovieBrowser/skin/fhd/pic/browser/dolbyplus.png,/usr/lib/enigma2/python/Plugins/Extensions/MovieBrowser/skin/fhd/pic/browser/dts.png,/usr/lib/enigma2/python/Plugins/Extensions/MovieBrowser/skin/fhd/pic/browser/dtshd.png,/usr/lib/enigma2/python/Plugins/Extensions/MovieBrowser/skin/fhd/pic/browser/mp2.png" transparent="1" alphatest="blend" zPosition="21"/>
+        <widget name="videomode" position="1590,730" size="75,57" pixmaps="/usr/lib/enigma2/python/Plugins/Extensions/MovieBrowser/skin/fhd/pic/browser/1080.png,/usr/lib/enigma2/python/Plugins/Extensions/MovieBrowser/skin/fhd/pic/browser/720.png,/usr/lib/enigma2/python/Plugins/Extensions/MovieBrowser/skin/fhd/pic/browser/480.png" transparent="1" alphatest="blend" zPosition="21"/>
+        <widget name="videocodec" position="1680,730" size="120,57" pixmaps="/usr/lib/enigma2/python/Plugins/Extensions/MovieBrowser/skin/fhd/pic/browser/h264.png,/usr/lib/enigma2/python/Plugins/Extensions/MovieBrowser/skin/fhd/pic/browser/mpeg2.png,/usr/lib/enigma2/python/Plugins/Extensions/MovieBrowser/skin/fhd/pic/browser/divx.png,/usr/lib/enigma2/python/Plugins/Extensions/MovieBrowser/skin/fhd/pic/browser/flv.png,/usr/lib/enigma2/python/Plugins/Extensions/MovieBrowser/skin/fhd/pic/browser/dvd.png" transparent="1" alphatest="blend" zPosition="21"/>
+        <widget name="aspectratio" position="1815,730" size="75,57" pixmaps="/usr/lib/enigma2/python/Plugins/Extensions/MovieBrowser/skin/fhd/pic/browser/16_9.png,/usr/lib/enigma2/python/Plugins/Extensions/MovieBrowser/skin/fhd/pic/browser/4_3.png" transparent="1" alphatest="blend" zPosition="21"/>
+        <widget name="ddd" position="1815,730" size="75,57" pixmap="/usr/lib/enigma2/python/Plugins/Extensions/MovieBrowser/skin/fhd/pic/browser/ddd.png" transparent="1" alphatest="blend" zPosition="21"/>
+        <widget name="ddd2" position="1365,730" size="75,57" pixmap="/usr/lib/enigma2/python/Plugins/Extensions/MovieBrowser/skin/fhd/pic/browser/ddd.png" transparent="1" alphatest="blend" zPosition="21"/>
         <!-- widget name="poster0"   position="-130,820" size="140,210" zPosition="21" transparent="1" alphatest="blend" scale="1"/-->
         <widget name="poster1" position="30,820" size="140,210" zPosition="21" transparent="1" alphatest="blend" scale="1"/>
         <widget name="poster2" position="180,820" size="140,210" zPosition="21" transparent="1" alphatest="blend" scale="1"/>
@@ -3655,8 +3655,8 @@
         <widget name="name" position="1015,0" size="900,90" font="Regular;36" foregroundColor="yellow" backgroundColor="#000000" halign="center" valign="center" transparent="1" zPosition="3"/>
         <widget name="posterback" position="1590,140" size="300,450" zPosition="20" transparent="1" scale="1"/>
         <widget name="poster" position="1590,140" size="300,450" zPosition="21" transparent="1" scale="1"/>
-        <widget name="ratings" position="1025,140" size="316,27" pixmap="/usr/lib/enigma2/python/Plugins/Extensions/MovieBrowser/pic/browser/ratings.png" orientation="orHorizontal" alphatest="blend" zPosition="6"/>
-        <widget name="ratingsback" position="1025,140" size="316,27" pixmap="/usr/lib/enigma2/python/Plugins/Extensions/MovieBrowser/pic/browser/ratings_back.png" alphatest="blend" zPosition="5"/>
+        <widget name="ratings" position="1025,140" size="316,27" pixmap="/usr/lib/enigma2/python/Plugins/Extensions/MovieBrowser/skin/fhd/pic/browser/ratings.png" orientation="orHorizontal" alphatest="blend" zPosition="6"/>
+        <widget name="ratingsback" position="1025,140" size="316,27" pixmap="/usr/lib/enigma2/python/Plugins/Extensions/MovieBrowser/skin/fhd/pic/browser/ratings_back.png" alphatest="blend" zPosition="5"/>
         <widget name="Year" position="1400,137" size="100,36" font="Regular;30" foregroundColor="#ffffff" transparent="1" zPosition="14"/>
         <widget name="year" position="1490,137" size="100,36" font="Regular;30" foregroundColor="yellow" transparent="1" zPosition="15"/>
         <eLabel position="1015,190" size="560,3" backgroundColor="#606060"/>
@@ -3681,16 +3681,16 @@
         <widget name="eposter" position="1013,249" size="810,608" alphatest="on" transparent="1" zPosition="21"/>
         <widget name="text" position="645,983" size="45,44" alphatest="blend" transparent="1" zPosition="3"/>
         <!-- MPEG Data -->
-        <widget name="audiotype" position="1013,990" size="120,57" pixmaps="/usr/lib/enigma2/python/Plugins/Extensions/MovieBrowser/pic/browser/dolby.png,/usr/lib/enigma2/python/Plugins/Extensions/MovieBrowser/pic/browser/dolbyplus.png,/usr/lib/enigma2/python/Plugins/Extensions/MovieBrowser/pic/browser/dts.png,/usr/lib/enigma2/python/Plugins/Extensions/MovieBrowser/pic/browser/dtshd.png,/usr/lib/enigma2/python/Plugins/Extensions/MovieBrowser/pic/browser/mp2.png" transparent="1" alphatest="blend" zPosition="21"/>
-        <widget name="videomode" position="1148,990" size="75,57" pixmaps="/usr/lib/enigma2/python/Plugins/Extensions/MovieBrowser/pic/browser/1080.png,/usr/lib/enigma2/python/Plugins/Extensions/MovieBrowser/pic/browser/720.png,/usr/lib/enigma2/python/Plugins/Extensions/MovieBrowser/pic/browser/480.png" transparent="1" alphatest="blend" zPosition="21"/>
-        <widget name="videocodec" position="1238,990" size="120,57" pixmaps="/usr/lib/enigma2/python/Plugins/Extensions/MovieBrowser/pic/browser/h264.png,/usr/lib/enigma2/python/Plugins/Extensions/MovieBrowser/pic/browser/mpeg2.png,/usr/lib/enigma2/python/Plugins/Extensions/MovieBrowser/pic/browser/divx.png,/usr/lib/enigma2/python/Plugins/Extensions/MovieBrowser/pic/browser/flv.png,/usr/lib/enigma2/python/Plugins/Extensions/MovieBrowser/pic/browser/dvd.png" transparent="1" alphatest="blend" zPosition="21"/>
-        <widget name="aspectratio" position="1373,990" size="75,57" pixmaps="/usr/lib/enigma2/python/Plugins/Extensions/MovieBrowser/pic/browser/16_9.png,/usr/lib/enigma2/python/Plugins/Extensions/MovieBrowser/pic/browser/4_3.png" transparent="1" alphatest="blend" zPosition="21"/>
-        <widget name="ddd" position="1013,990" size="75,57" pixmap="/usr/lib/enigma2/python/Plugins/Extensions/MovieBrowser/pic/browser/ddd.png" transparent="1" alphatest="blend" zPosition="21"/>
-        <widget name="ddd2" position="1373,990" size="75,57" pixmap="/usr/lib/enigma2/python/Plugins/Extensions/MovieBrowser/pic/browser/ddd.png" transparent="1" alphatest="blend" zPosition="22"/>
-        <ePixmap pixmap="/usr/lib/enigma2/python/Plugins/Extensions/MovieBrowser/pic/browser/key_menu.png" position="1840,980" size="53,38" alphatest="blend" transparent="1" zPosition="4"/>
-        <ePixmap pixmap="/usr/lib/enigma2/python/Plugins/Extensions/MovieBrowser/pic/browser/key_info.png" position="1840,1020" size="53,38" alphatest="blend" transparent="1" zPosition="4"/>
-        <ePixmap pixmap="/usr/lib/enigma2/python/Plugins/Extensions/MovieBrowser/pic/browser/key_help.png" position="1760,980" size="53,38" alphatest="blend" transparent="1" zPosition="4"/>
-        <ePixmap pixmap="/usr/lib/enigma2/python/Plugins/Extensions/MovieBrowser/pic/browser/key_pvr.png" position="1760,1020" size="53,38" alphatest="blend" transparent="1" zPosition="4"/>
+        <widget name="audiotype" position="1013,990" size="120,57" pixmaps="/usr/lib/enigma2/python/Plugins/Extensions/MovieBrowser/skin/fhd/pic/browser/dolby.png,/usr/lib/enigma2/python/Plugins/Extensions/MovieBrowser/skin/fhd/pic/browser/dolbyplus.png,/usr/lib/enigma2/python/Plugins/Extensions/MovieBrowser/skin/fhd/pic/browser/dts.png,/usr/lib/enigma2/python/Plugins/Extensions/MovieBrowser/skin/fhd/pic/browser/dtshd.png,/usr/lib/enigma2/python/Plugins/Extensions/MovieBrowser/skin/fhd/pic/browser/mp2.png" transparent="1" alphatest="blend" zPosition="21"/>
+        <widget name="videomode" position="1148,990" size="75,57" pixmaps="/usr/lib/enigma2/python/Plugins/Extensions/MovieBrowser/skin/fhd/pic/browser/1080.png,/usr/lib/enigma2/python/Plugins/Extensions/MovieBrowser/skin/fhd/pic/browser/720.png,/usr/lib/enigma2/python/Plugins/Extensions/MovieBrowser/skin/fhd/pic/browser/480.png" transparent="1" alphatest="blend" zPosition="21"/>
+        <widget name="videocodec" position="1238,990" size="120,57" pixmaps="/usr/lib/enigma2/python/Plugins/Extensions/MovieBrowser/skin/fhd/pic/browser/h264.png,/usr/lib/enigma2/python/Plugins/Extensions/MovieBrowser/skin/fhd/pic/browser/mpeg2.png,/usr/lib/enigma2/python/Plugins/Extensions/MovieBrowser/skin/fhd/pic/browser/divx.png,/usr/lib/enigma2/python/Plugins/Extensions/MovieBrowser/skin/fhd/pic/browser/flv.png,/usr/lib/enigma2/python/Plugins/Extensions/MovieBrowser/skin/fhd/pic/browser/dvd.png" transparent="1" alphatest="blend" zPosition="21"/>
+        <widget name="aspectratio" position="1373,990" size="75,57" pixmaps="/usr/lib/enigma2/python/Plugins/Extensions/MovieBrowser/skin/fhd/pic/browser/16_9.png,/usr/lib/enigma2/python/Plugins/Extensions/MovieBrowser/skin/fhd/pic/browser/4_3.png" transparent="1" alphatest="blend" zPosition="21"/>
+        <widget name="ddd" position="1013,990" size="75,57" pixmap="/usr/lib/enigma2/python/Plugins/Extensions/MovieBrowser/skin/fhd/pic/browser/ddd.png" transparent="1" alphatest="blend" zPosition="21"/>
+        <widget name="ddd2" position="1373,990" size="75,57" pixmap="/usr/lib/enigma2/python/Plugins/Extensions/MovieBrowser/skin/fhd/pic/browser/ddd.png" transparent="1" alphatest="blend" zPosition="22"/>
+        <ePixmap pixmap="/usr/lib/enigma2/python/Plugins/Extensions/MovieBrowser/skin/fhd/pic/browser/key_menu.png" position="1840,980" size="53,38" alphatest="blend" transparent="1" zPosition="4"/>
+        <ePixmap pixmap="/usr/lib/enigma2/python/Plugins/Extensions/MovieBrowser/skin/fhd/pic/browser/key_info.png" position="1840,1020" size="53,38" alphatest="blend" transparent="1" zPosition="4"/>
+        <ePixmap pixmap="/usr/lib/enigma2/python/Plugins/Extensions/MovieBrowser/skin/fhd/pic/browser/key_help.png" position="1760,980" size="53,38" alphatest="blend" transparent="1" zPosition="4"/>
+        <ePixmap pixmap="/usr/lib/enigma2/python/Plugins/Extensions/MovieBrowser/skin/fhd/pic/browser/key_pvr.png" position="1760,1020" size="53,38" alphatest="blend" transparent="1" zPosition="4"/>
         <widget name="menu" position="0,0" size="0,0" alphatest="blend" transparent="1" zPosition="3"/>
         <widget name="info" position="0,0" size="0,0" alphatest="blend" transparent="1" zPosition="3"/>
         <widget name="help" position="0,0" size="0,0" alphatest="blend" transparent="1" zPosition="3"/>
@@ -3708,27 +3708,27 @@
         <!-- widget name="seen" position="1763,180" size="60,60" pixmap="/usr/lib/enigma2/python/Plugins/Extensions/MovieBrowser/skin/fhd/pic/browser/seen.png" transparent="1" alphatest="on" zPosition="3" /-->
     </screen>
     <screen name="movieBrowserPosterwall" position="0,0" size="1920,1080" flags="wfNoBorder" title="  ">
-        <widget name="ratings_up" position="98,962" size="315,32" pixmap="/usr/lib/enigma2/python/Plugins/Extensions/MovieBrowser/pic/browser/ratings.png" borderWidth="0" orientation="orHorizontal" transparent="1" zPosition="3"/>
-        <widget name="ratingsback_up" position="98,962" size="315,32" pixmap="/usr/lib/enigma2/python/Plugins/Extensions/MovieBrowser/pic/browser/ratings_back.png" alphatest="on" zPosition="4"/>
-        <widget name="audiotype" position="38,1008" size="120,57" pixmaps="/usr/lib/enigma2/python/Plugins/Extensions/MovieBrowser/pic/browser/dolby.png,/usr/lib/enigma2/python/Plugins/Extensions/MovieBrowser/pic/browser/dolbyplus.png,/usr/lib/enigma2/python/Plugins/Extensions/MovieBrowser/pic/browser/dts.png,/usr/lib/enigma2/python/Plugins/Extensions/MovieBrowser/pic/browser/dtshd.png,/usr/lib/enigma2/python/Plugins/Extensions/MovieBrowser/pic/browser/mp2.png" transparent="1" alphatest="blend" zPosition="21"/>
-        <widget name="videomode" position="173,1008" size="75,57" pixmaps="/usr/lib/enigma2/python/Plugins/Extensions/MovieBrowser/pic/browser/1080.png,/usr/lib/enigma2/python/Plugins/Extensions/MovieBrowser/pic/browser/720.png,/usr/lib/enigma2/python/Plugins/Extensions/MovieBrowser/pic/browser/480.png" transparent="1" alphatest="blend" zPosition="21"/>
-        <widget name="videocodec" position="263,1008" size="120,57" pixmaps="/usr/lib/enigma2/python/Plugins/Extensions/MovieBrowser/pic/browser/h264.png,/usr/lib/enigma2/python/Plugins/Extensions/MovieBrowser/pic/browser/mpeg2.png,/usr/lib/enigma2/python/Plugins/Extensions/MovieBrowser/pic/browser/divx.png,/usr/lib/enigma2/python/Plugins/Extensions/MovieBrowser/pic/browser/flv.png,/usr/lib/enigma2/python/Plugins/Extensions/MovieBrowser/pic/browser/dvd.png" transparent="1" alphatest="blend" zPosition="21"/>
-        <widget name="aspectratio" position="398,1008" size="75,57" pixmaps="/usr/lib/enigma2/python/Plugins/Extensions/MovieBrowser/pic/browser/16_9.png,/usr/lib/enigma2/python/Plugins/Extensions/MovieBrowser/pic/browser/4_3.png" transparent="1" alphatest="blend" zPosition="21"/>
-        <widget name="ddd" position="38,1008" size="75,57" pixmap="/usr/lib/enigma2/python/Plugins/Extensions/MovieBrowser/pic/browser/ddd.png" transparent="1" alphatest="blend" zPosition="21"/>
-        <widget name="ddd2" position="488,1008" size="75,57" pixmap="/usr/lib/enigma2/python/Plugins/Extensions/MovieBrowser/pic/browser/ddd.png" transparent="1" alphatest="blend" zPosition="21"/>
-        <widget name="ratings" position="98,986" size="315,32" pixmap="/usr/lib/enigma2/python/Plugins/Extensions/MovieBrowser/pic/browser/ratings.png" borderWidth="0" orientation="orHorizontal" transparent="1" zPosition="3"/>
-        <widget name="ratingsback" position="98,986" size="315,32" pixmap="/usr/lib/enigma2/python/Plugins/Extensions/MovieBrowser/pic/browser/ratings_back.png" alphatest="on" zPosition="4"/>
+        <widget name="ratings_up" position="98,962" size="315,32" pixmap="/usr/lib/enigma2/python/Plugins/Extensions/MovieBrowser/skin/fhd/pic/browser/ratings.png" borderWidth="0" orientation="orHorizontal" transparent="1" zPosition="3"/>
+        <widget name="ratingsback_up" position="98,962" size="315,32" pixmap="/usr/lib/enigma2/python/Plugins/Extensions/MovieBrowser/skin/fhd/pic/browser/ratings_back.png" alphatest="on" zPosition="4"/>
+        <widget name="audiotype" position="38,1008" size="120,57" pixmaps="/usr/lib/enigma2/python/Plugins/Extensions/MovieBrowser/skin/fhd/pic/browser/dolby.png,/usr/lib/enigma2/python/Plugins/Extensions/MovieBrowser/skin/fhd/pic/browser/dolbyplus.png,/usr/lib/enigma2/python/Plugins/Extensions/MovieBrowser/skin/fhd/pic/browser/dts.png,/usr/lib/enigma2/python/Plugins/Extensions/MovieBrowser/skin/fhd/pic/browser/dtshd.png,/usr/lib/enigma2/python/Plugins/Extensions/MovieBrowser/skin/fhd/pic/browser/mp2.png" transparent="1" alphatest="blend" zPosition="21"/>
+        <widget name="videomode" position="173,1008" size="75,57" pixmaps="/usr/lib/enigma2/python/Plugins/Extensions/MovieBrowser/skin/fhd/pic/browser/1080.png,/usr/lib/enigma2/python/Plugins/Extensions/MovieBrowser/skin/fhd/pic/browser/720.png,/usr/lib/enigma2/python/Plugins/Extensions/MovieBrowser/skin/fhd/pic/browser/480.png" transparent="1" alphatest="blend" zPosition="21"/>
+        <widget name="videocodec" position="263,1008" size="120,57" pixmaps="/usr/lib/enigma2/python/Plugins/Extensions/MovieBrowser/skin/fhd/pic/browser/h264.png,/usr/lib/enigma2/python/Plugins/Extensions/MovieBrowser/skin/fhd/pic/browser/mpeg2.png,/usr/lib/enigma2/python/Plugins/Extensions/MovieBrowser/skin/fhd/pic/browser/divx.png,/usr/lib/enigma2/python/Plugins/Extensions/MovieBrowser/skin/fhd/pic/browser/flv.png,/usr/lib/enigma2/python/Plugins/Extensions/MovieBrowser/skin/fhd/pic/browser/dvd.png" transparent="1" alphatest="blend" zPosition="21"/>
+        <widget name="aspectratio" position="398,1008" size="75,57" pixmaps="/usr/lib/enigma2/python/Plugins/Extensions/MovieBrowser/skin/fhd/pic/browser/16_9.png,/usr/lib/enigma2/python/Plugins/Extensions/MovieBrowser/skin/fhd/pic/browser/4_3.png" transparent="1" alphatest="blend" zPosition="21"/>
+        <widget name="ddd" position="38,1008" size="75,57" pixmap="/usr/lib/enigma2/python/Plugins/Extensions/MovieBrowser/skin/fhd/pic/browser/ddd.png" transparent="1" alphatest="blend" zPosition="21"/>
+        <widget name="ddd2" position="488,1008" size="75,57" pixmap="/usr/lib/enigma2/python/Plugins/Extensions/MovieBrowser/skin/fhd/pic/browser/ddd.png" transparent="1" alphatest="blend" zPosition="21"/>
+        <widget name="ratings" position="98,986" size="315,32" pixmap="/usr/lib/enigma2/python/Plugins/Extensions/MovieBrowser/skin/fhd/pic/browser/ratings.png" borderWidth="0" orientation="orHorizontal" transparent="1" zPosition="3"/>
+        <widget name="ratingsback" position="98,986" size="315,32" pixmap="/usr/lib/enigma2/python/Plugins/Extensions/MovieBrowser/skin/fhd/pic/browser/ratings_back.png" alphatest="on" zPosition="4"/>
         <widget name="name" position="503,930" size="915,143" font="Regular;28" foregroundColor="#FFFFFF" valign="center" halign="center" transparent="1" zPosition="5"/>
-        <widget name="seen" position="1425,965" size="60,60" pixmap="/usr/lib/enigma2/python/Plugins/Extensions/MovieBrowser/pic/browser/seen.png" transparent="1" alphatest="on" zPosition="6"/>
+        <widget name="seen" position="1425,965" size="60,60" pixmap="/usr/lib/enigma2/python/Plugins/Extensions/MovieBrowser/skin/fhd/pic/browser/seen.png" transparent="1" alphatest="on" zPosition="6"/>
         <widget name="runtime" position="1500,930" size="180,143" font="Regular;26" foregroundColor="#FFFFFF" halign="right" valign="center" transparent="1" zPosition="7"/>
         <widget name="country" position="1688,930" size="90,143" font="Regular;26" foregroundColor="#FFFFFF" halign="right" valign="center" transparent="1" zPosition="8"/>
         <widget name="year" position="1785,930" size="98,143" font="Regular;26" foregroundColor="#FFFFFF" halign="right" valign="center" transparent="1" zPosition="9"/>
         <widget name="2infoback" position="38,38" size="788,645" alphatest="blend" transparent="1" zPosition="-1"/>
         <widget name="2name" position="60,45" size="683,105" font="Regular;28" foregroundColor="#FFFFFF" valign="center" transparent="1" zPosition="13"/>
-        <widget name="2seen" position="743,45" size="60,60" pixmap="/usr/lib/enigma2/python/Plugins/Extensions/MovieBrowser/pic/browser/seen.png" transparent="1" alphatest="on" zPosition="13"/>
+        <widget name="2seen" position="743,45" size="60,60" pixmap="/usr/lib/enigma2/python/Plugins/Extensions/MovieBrowser/skin/fhd/pic/browser/seen.png" transparent="1" alphatest="on" zPosition="13"/>
         <widget name="2Rating" position="60,150" size="188,42" font="Regular;22" halign="left" foregroundColor="{color}" transparent="1" zPosition="14"/>
-        <widget name="2ratings" position="60,195" size="315,32" pixmap="/usr/lib/enigma2/python/Plugins/Extensions/MovieBrowser/pic/browser/ratings.png" borderWidth="0" orientation="orHorizontal" transparent="1" zPosition="15"/>
-        <widget name="2ratingsback" position="60,195" size="315,32" pixmap="/usr/lib/enigma2/python/Plugins/Extensions/MovieBrowser/pic/browser/ratings_back.png" alphatest="on" zPosition="16"/>
+        <widget name="2ratings" position="60,195" size="315,32" pixmap="/usr/lib/enigma2/python/Plugins/Extensions/MovieBrowser/skin/fhd/pic/browser/ratings.png" borderWidth="0" orientation="orHorizontal" transparent="1" zPosition="15"/>
+        <widget name="2ratingsback" position="60,195" size="315,32" pixmap="/usr/lib/enigma2/python/Plugins/Extensions/MovieBrowser/skin/fhd/pic/browser/ratings_back.png" alphatest="on" zPosition="16"/>
         <widget name="2Director" position="60,255" size="188,42" font="Regular;22" halign="left" foregroundColor="{color}" transparent="1" zPosition="18"/>
         <widget name="2director" position="60,300" size="480,42" font="Regular;22" foregroundColor="#FFFFFF" transparent="1" zPosition="19"/>
         <widget name="2Country" position="555,255" size="188,42" font="Regular;22" halign="left" foregroundColor="{color}" transparent="1" zPosition="20"/>
@@ -3747,7 +3747,6 @@
         <widget name="banner" position="1113,80" size="750,138" alphatest="on" transparent="1" zPosition="30"/>
         <widget name="episodes" position="1113,227" size="750,405" scrollbarMode="showOnDemand" transparent="1" zPosition="30"/>
         <widget name="frame" position="11,-21" size="240,345" zPosition="-2" alphatest="on"/>"' + skincontent + '
-
 		<!-- widget name="infoback" position="8,930" size="1905,143" alphatest="blend" transparent="1" zPosition="2"/-->
     </screen>
     <screen name="movieDatabase" position="0,0" size="1920,1080" title=" " backgroundColor="#FF000000" flags="wfNoBorder">
@@ -3786,7 +3785,7 @@
         <widget name="log" position="230,120" size="1000,870" font="Regular;20" zPosition="1"/>
     </screen>
     <screen name="NOmoviesList" position="0,0" size="1920,1080" title=" " backgroundColor="#FF000000" flags="wfNoBorder">
-        <ePixmap position="0,0" size="1095,42" pixmap="/usr/lib/enigma2/python/Plugins/Extensions/MovieBrowser/pic/setup/logo.png" zPosition="1"/>
+        <ePixmap position="0,0" size="1095,42" pixmap="/usr/lib/enigma2/python/Plugins/Extensions/MovieBrowser/skin/fhd/pic/setup/logo.png" zPosition="1"/>
         <widget name="poster1" position="15,50" size="150,225" alphatest="blend" zPosition="1"/>
         <widget name="poster2" position="15,272" size="150,225" alphatest="blend" zPosition="1"/>
         <widget name="poster3" position="15,500" size="150,225" alphatest="blend" zPosition="1"/>
@@ -3805,9 +3804,9 @@
         <widget name="label_select_1" position="0,0" size="450,150" font="Regular;32" backgroundColor="#D9D9D9" foregroundColor="#000000" halign="center" valign="center" transparent="1" zPosition="1"/>
         <widget name="label_select_2" position="0,150" size="450,150" font="Regular;32" backgroundColor="#D9D9D9" foregroundColor="#000000" halign="center" valign="center" transparent="1" zPosition="1"/>
         <widget name="label_select_3" position="0,300" size="450,150" font="Regular;32" backgroundColor="#D9D9D9" foregroundColor="#000000" halign="center" valign="center" transparent="1" zPosition="1"/>
-        <widget name="select_1" position="0,0" size="450,150" pixmap="/usr/lib/enigma2/python/Plugins/Extensions/MovieBrowser/pic/browser/menu_select.png" transparent="1" alphatest="blend" zPosition="-1"/>
-        <widget name="select_2" position="0,150" size="450,150" pixmap="/usr/lib/enigma2/python/Plugins/Extensions/MovieBrowser/pic/browser/menu_select.png" transparent="1" alphatest="blend" zPosition="-1"/>
-        <widget name="select_3" position="0,300" size="450,150" pixmap="/usr/lib/enigma2/python/Plugins/Extensions/MovieBrowser/pic/browser/menu_select.png" transparent="1" alphatest="blend" zPosition="-1"/>
+        <widget name="select_1" position="0,0" size="450,150" pixmap="/usr/lib/enigma2/python/Plugins/Extensions/MovieBrowser/skin/fhd/pic/browser/menu_select.png" transparent="1" alphatest="blend" zPosition="-1"/>
+        <widget name="select_2" position="0,150" size="450,150" pixmap="/usr/lib/enigma2/python/Plugins/Extensions/MovieBrowser/skin/fhd/pic/browser/menu_select.png" transparent="1" alphatest="blend" zPosition="-1"/>
+        <widget name="select_3" position="0,300" size="450,150" pixmap="/usr/lib/enigma2/python/Plugins/Extensions/MovieBrowser/skin/fhd/pic/browser/menu_select.png" transparent="1" alphatest="blend" zPosition="-1"/>
     </screen>
     <!-- [083] FileCommander 083/01 -->
     <screen name="FileCommander" position="0,0" size="1920,1080" flags="wfNoBorder" backgroundColor="transparent">
@@ -3945,7 +3944,7 @@
         <panel name="ArchiverMenuScreen"/>
     </screen>
     <!-- [084] TheWeather 084/01 -->
-	<screen name="localcityscreen" position="0,0" size="1920,1080" flags="wfNoBorder" backgroundColor="transparent" title="Weather Plugin">
+    <screen name="localcityscreen" position="0,0" size="1920,1080" flags="wfNoBorder" backgroundColor="transparent" title="Weather Plugin">
         <panel name="LayerMenu1000"/>
         <panel name="vButtonTemplate-1000"/>
         <widget name="favor"   position="230,140" size="806,60" valign="center" halign="center" zPosition="1" font="Regular;30" foregroundColor="yellow" backgroundColor="#303030" transparent="0" />
@@ -3972,17 +3971,17 @@
         <widget  source="Yellowkey" render="Label"  position="690,980" size="300,30" font="Regular;28" halign="right" valign="center" foregroundColor="white" backgroundColor="black" transparent="1" zPosition="2"/>
         <ePixmap pixmap="oZetaNSS-FHD/buttons/button_blue.png" position="1010,1035" size="30,30" zPosition="1" alphatest="blend"/>
         <widget  source="Bluekey" render="Label" position="690,1035" size="300,30" font="Regular;28" halign="right" valign="center" foregroundColor="white" backgroundColor="black" transparent="1" zPosition="2"/>
-	<widget source="menu" render="Listbox" position="230,140" size="810,770" transparent="1" scrollbarMode="showOnDemand" scrollbarWidth="10" backgroundColorSelected="#124b97">
-		<convert type="TemplatedMultiContent">
-			{"template": [
-				    MultiContentEntryText(pos = (70, 2), size = (780, 30), font=0, flags = RT_HALIGN_LEFT, text = 0), # index 2 is the Menu Titel
-				    MultiContentEntryText(pos = (80, 32), size = (770, 30), font=1, flags = RT_HALIGN_LEFT, text = 1), # index 3 is the Description
-				    MultiContentEntryPixmapAlphaTest(pos = (5, 10), size = (50, 50), png = 2), # index 4 is the pixmap
-				],
-				"fonts": [gFont("Regular", 28),gFont("Regular", 26)],
-				"itemHeight": 70
-			}
-        	</convert>
+        <widget source="menu" render="Listbox" position="230,140" size="810,770" transparent="1" scrollbarMode="showOnDemand" scrollbarWidth="10" backgroundColorSelected="#124b97">
+            <convert type="TemplatedMultiContent">
+                {"template": [
+                        MultiContentEntryText(pos = (70, 2), size = (780, 30), font=0, flags = RT_HALIGN_LEFT, text = 0), # index 2 is the Menu Titel
+                        MultiContentEntryText(pos = (80, 32), size = (770, 30), font=1, flags = RT_HALIGN_LEFT, text = 1), # index 3 is the Description
+                        MultiContentEntryPixmapAlphaTest(pos = (5, 10), size = (50, 50), png = 2), # index 4 is the pixmap
+                    ],
+                    "fonts": [gFont("Regular", 28),gFont("Regular", 26)],
+                    "itemHeight": 70
+                }
+            </convert>
         </widget>
     </screen>
     <!-- [086] NGSettings VHannibal Settings 086/01 -->

@@ -210,14 +210,14 @@
     <!-- **** PARENTAL PANEL  ***** -->
     <!-- ************************ -->
     <!-- ________________________ -->
-<!--              
+    <!--
     <screen name="zParental">
         <widget source="session.Event_Now" render="zParental"/>
         <widget render="zParental" source="session.Event_Now" position="315,872" alphatest="blend" size="50,50" zPosition="10" transparent="1"/>
         <widget source="session.Event_Next" render="zParental"/>
         <widget render="zParental" source="session.Event_Next" position="315,955" alphatest="blend" size="50,50" zPosition="10" transparent="1"/>
     </screen>
-     -->
+    -->
     <!-- ************************ -->
     <!-- *  GENRE PIC EVENTVIEW * -->
     <!-- ************************ -->

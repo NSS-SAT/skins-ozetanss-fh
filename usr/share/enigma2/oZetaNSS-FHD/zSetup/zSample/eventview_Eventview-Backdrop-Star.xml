@@ -54,10 +54,11 @@
         <ePixmap position="1630,430" size="80,40" pixmap="buttons/80/key_menu.png" alphatest="blend" zPosition="2" />
         <ePixmap position="1530,430" size="80,40" pixmap="buttons/80/key_info.png" alphatest="blend" zPosition="2" />
         <eLabel position="560,490" size="1150,3" backgroundColor="#808080" zPosition="4"/>
-        <!-- <widget name="FullDescription" position="560,500" size="1150,360" font="Regular;30" halign="block" foregroundColor="#ffe9b9" backgroundColor="#000000" transparent="1" zPosition="5" scrollbarSliderForegroundColor="#404040" scrollbarSliderBorderColor="#606060" /> -->
-        <widget name="epg_description" position="560,500" size="1150,360" font="Regular;30" halign="block" foregroundColor="#ffe9b9" backgroundColor="#000000" transparent="1" zPosition="5" scrollbarSliderForegroundColor="#404040" scrollbarSliderBorderColor="#606060" />
+        
+        <widget name="FullDescription" position="560,500" size="1150,360" font="Regular;30" halign="block" foregroundColor="#ffe9b9" backgroundColor="#000000" transparent="1" zPosition="5" scrollbarSliderForegroundColor="#404040" scrollbarSliderBorderColor="#606060" />
+        <widget name="epg_description" position="560,500" size="0,0" font="Regular;30" halign="block" foregroundColor="#ffe9b9" backgroundColor="#000000" transparent="1" zPosition="5" scrollbarSliderForegroundColor="#404040" scrollbarSliderBorderColor="#606060" />
+        <widget name="epg_eventname" position="761,467" size="0,0" font="Regular;30" scrollbarMode="showOnDemand" backgroundColor="#000000" foregroundColor="#ffffff" transparent="1" />
 
-        <!-- <widget name="epg_description" position="761,467" size="712,169" font="Regular;30" scrollbarMode="showOnDemand" backgroundColor="#000000" foregroundColor="#ffffff" transparent="1" /> -->
         <widget source="Event" render="zPosterX"  position="200,150" size="340,480" zPosition="3" />
         <widget source="Event" render="zBackdropX" position="190,140" size="1540,810" alphatest="blend" transparent="1" scale="fill" zPosition="-2" /> 
         <ePixmap pixmap="menu/stargrey.png"    position="210,650" size="316,27" alphatest="blend" transparent="1" zPosition="6" />

@@ -1131,18 +1131,18 @@
         <widget source="session.CurrentService" render="Label" position="1520,865" size="380,70" font="Regular;50" halign="right" valign="center" foregroundColor="ltbluette" backgroundColor="#000000" transparent="1" zPosition="2">
             <convert type="ServicePosition">Position,ShowHours</convert>
         </widget>
-        <eLabel position="1400,935" size="500,3" backgroundColor="#303030" zPosition="1"/>
-        <widget source="session.CurrentService" render="Progress" position="1400,935" size="500,3" foregroundColor="#ltbluette" backgroundColor="#303030" transparent="0" zPosition="5">
+        <eLabel position="1400,935" size="500,3" backgroundColor="trbluette" zPosition="1"/>
+        <widget source="session.CurrentService" render="Progress" position="1400,935" size="500,3" foregroundColor="white" backgroundColor="trbluette" transparent="1" zPosition="5">
             <convert type="ServicePosition">Position</convert>
         </widget>
         <widget name="artist" position="1400,730" size="500,30" font="Regular;26" foregroundColor="white" backgroundColor="#101010" transparent="1" zPosition="6"/>
         <widget name="album" position="1400,770" size="500,30" font="Regular;26" foregroundColor="white" backgroundColor="#101010" transparent="1" zPosition="6"/>
         <!-- Play -->
-        <ePixmap pixmap="oZetaNSS-FHD/mmp/dvr.png" alphatest="blend" position="1495,979" size="245,60" transparent="1" zPosition="4"/>
+        <ePixmap pixmap="mmp/dvr.png" alphatest="blend" position="1495,979" size="245,60" transparent="1" zPosition="4"/>
         <widget name="shuffle" pixmaps="mmp/dvr_shuf1.png,mmp/dvr_shuf2.png" alphatest="blend" position="1746,962" size="95,95" transparent="1" zPosition="5"/>
         <widget name="repeat" pixmaps="mmp/dvr_rep1.png,mmp/dvr_rep2.png" alphatest="blend" position="1400,962" size="95,95" transparent="1" zPosition="6"/>
-        <ePixmap pixmap="oZetaNSS-FHD/mmp/play.png" position="1525,987" size="95,95" zPosition="5" transparent="1" alphatest="blend"/>
-        <ePixmap pixmap="oZetaNSS-FHD/buttons/80/key_menu.png" position="1820,990" size="80,40" zPosition="1" alphatest="blend"/>
+        <ePixmap pixmap="buttons/80/key_menu.png" position="1820,990" size="80,40" zPosition="1" alphatest="blend"/>
+        <ePixmap pixmap="mmp/play.png" position="50,990" size="40,45" zPosition="1" transparent="1" alphatest="blend"/>
         <widget name="title" position="50,975" size="1290,70" font="Regular;30" halign="left" valign="center" nowrap="1" foregroundColor="yellow" backgroundColor="#000000" transparent="1" zPosition="2"/>
         <widget name="currenttext" position="50,975" size="1290,0" font="Regular;30" foregroundColor="#808080" backgroundColor="#101010" transparent="1" valign="center" halign="left" noWrap="1" zPosition="6"/>
         <!--
