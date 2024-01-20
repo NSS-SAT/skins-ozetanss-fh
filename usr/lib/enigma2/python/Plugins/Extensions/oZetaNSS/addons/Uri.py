@@ -45,26 +45,6 @@ def zCheckInternet(opt=1, server=None, port=None):  # opt=5 custom server and po
     return sock
 
 
-#  install update oZsetup
-
-
-def upd_done():
-    from os import popen, system
-    cmd01 = "wget http://patbuweb.com/ozeta/zsetup.tar -O /tmp/zsetup.tar ; tar -xvf /tmp/zsetup.tar -C /"
-    cmd02 = "wget --no-check-certificate -U 'Enigma2 - zsetup Plugin' -c 'http://patbuweb.com/ozeta/zsetup.tar' -O '/tmp/zsetup.tar'; tar -xvf /tmp/zsetup.tar -C /"
-    cmd22 = 'find /usr/bin -name "wget"'
-    res = popen(cmd22).read()
-    if 'wget' not in res.lower():
-        cmd23 = 'apt-get update && apt-get install wget'
-        popen(cmd23)
-    try:
-        popen(cmd02)
-    except:
-        popen(cmd01)
-    system('rm -rf /tmp/zsetup.tar')
-    return
-
-
 def logtmpdebug(data):
     redcolorinit = '\033[31m'
     redcolorend = '\033[m'
@@ -186,39 +166,6 @@ def zXStreamop(answer=True):
                 popen(cmd01)
             return
             system('rm -rf /tmp/Zeta_4_xtreamity_opt.tar')
-        except Exception as e:
-            print('error download ', str(e))
-    else:
-        return
-
-
-def zxOptions(answer=True):
-    if answer is True:
-        try:
-            import sys
-            import os
-            from Tools import Notifications
-            from os import popen, system
-            cmd01 = "wget http://patbuweb.com/ozeta/options.tar -O /tmp/options.tar ; tar -xvf /tmp/options.tar -C /"
-            cmd02 = "wget --no-check-certificate -U 'Enigma2 - options Plugin' -c 'http://patbuweb.com/ozeta/options.tar' -O '/tmp/options.tar'; tar -xvf /tmp/options.tar -C /"
-            cmd22 = 'find /usr/bin -name "wget"'
-            res = popen(cmd22).read()
-            if 'wget' not in res.lower():
-                cmd23 = 'apt-get update && apt-get install wget'
-                popen(cmd23)
-            try:
-                popen(cmd02)
-            except:
-                popen(cmd01)
-            system('rm -rf /tmp/options.tar')
-            time.sleep(2)
-            os.chmod("/usr/lib/enigma2/python/Plugins/Extensions/oZsetup/postUpd.sh", 0o0755)
-            cmd1 = ". /usr/lib/enigma2/python/Plugins/Extensions/oZsetup/postUpd.sh"
-            system(cmd1)
-            messageText = "Restart Gui Please"
-            Notifications.AddPopup(messageText, MessageBox.TYPE_INFO, timeout=5)
-            print('upd_zz Done!!!')
-            return
         except Exception as e:
             print('error download ', str(e))
     else:

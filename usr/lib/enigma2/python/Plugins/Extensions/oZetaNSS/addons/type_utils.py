@@ -206,5 +206,3 @@ class zEditor(Screen):
             self.close()
         else:
             self.close()
-
-

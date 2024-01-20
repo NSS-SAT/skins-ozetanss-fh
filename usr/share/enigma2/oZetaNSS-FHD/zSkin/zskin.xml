@@ -243,7 +243,7 @@
     <!-- Plugins OK -->
     <screen name="PluginBrowser" position="0,0" size="1920,1080" Title="ATV Plugins" backgroundColor="transparent" flags="wfNoBorder">
         <panel name="LayerMenu1500"/>
-        <panel name="vButtonTemplate-1500"/>
+        <!-- <panel name="vButtonTemplate-1500"/> -->
         <ePixmap position="230,10" size="110,110" pixmap="oZetaNSS-FHD/iconsmenu/menu_mainmenu_pluginhider.png" alphatest="blend" transparent="1" scale="1" zPosition="1"/>
         <widget name="list" position="230,140" size="1250,800" font="Regular;30" itemHeight="80" scrollbarMode="showOnDemand" scrollbarWidth="10" transparent="1" zPosition="1" scrollbarSliderForegroundColor="#606060" scrollbarSliderBackgroundColor="#303030" backgroundColor="#000000" backgroundColorSelected="bluette" foregroundColorSelected="#ffffff"/>
         <ePixmap pixmap="buttons/80/key_menu.png" position="1400,1025" size="80,40" alphatest="blend"/>
@@ -258,7 +258,7 @@
     <!-- mod mmark 30-12-23 -->
     <screen name="PluginBrowserList" position="0,0" size="1920,1080" Title="ATV Plugins" backgroundColor="transparent" flags="wfNoBorder">
         <panel name="LayerMenu1500"/>
-        <panel name="vButtonTemplate-1500"/>
+        <!-- <panel name="vButtonTemplate-1500"/> -->
         <ePixmap position="230,10" size="110,110" pixmap="oZetaNSS-FHD/iconsmenu/menu_mainmenu_pluginhider.png" alphatest="blend" transparent="1" scale="1" zPosition="1"/>
         <widget name="quickselect" position="230,140" size="1240,716" backgroundColor="background90" font="Regular;150" halign="center" transparent="1" valign="center" zPosition="5"/>
         <widget name="description" position="230,140" size="1250,60" font="Regular; 28" halign="center" valign="center" backgroundColor="#303030" foregroundColor="yellow" transparent="0"/>
@@ -281,7 +281,7 @@
     <!-- mod mmark 30-12-23 -->
     <screen name="PluginBrowserGrid" position="0,0" size="1920,1080" Title="ATV Plugins" backgroundColor="transparent" flags="wfNoBorder">
                                      
-        <panel name="vButtonTemplate-1500"/>
+        <!-- <panel name="vButtonTemplate-1500"/> -->
         <panel name="Logo"/>
         <ePixmap position="230,10" size="110,110" pixmap="oZetaNSS-FHD/iconsmenu/menu_mainmenu_pluginhider.png" alphatest="blend" transparent="1" scale="1" zPosition="1"/>
         <widget source="Title" render="Label" position="400,7" size="1067,110" font="Mmenu;102" foregroundColor="ltbluette" backgroundColor="#000000" transparent="1" zPosition="5"/>
@@ -342,8 +342,8 @@
 	</widget>
     </screen>
     <screen name="PluginDownloadBrowser" position="0,0" size="1920,1080" Title="ATV Plugins" backgroundColor="transparent" flags="wfNoBorder">
-        <panel name="LayerMenu1500-nl"/>
-        <panel name="bLogo"/>
+        <panel name="LayerMenu1500"/>
+        <!-- <panel name="bLogo"/> -->
         <ePixmap position="230,10" size="110,110" pixmap="oZetaNSS-FHD/iconsmenu/menu_mainmenu_pluginhider.png" alphatest="blend" transparent="1" scale="1" zPosition="1"/>
         <widget name="text" position="230,160" size="0,0" zPosition="1" transparent="1" font="Regular;32" valign="center" halign="center"/>
         <widget name="list" position="230,150" size="1250,760" font="Regular;30" itemHeight="76" scrollbarMode="showOnDemand" scrollbarWidth="10" transparent="1" zPosition="1" backgroundColor="#000000" backgroundColorSelected="#124b97"/>
@@ -1744,28 +1744,31 @@
     <screen name="EPGSelection" title="EGP Selection" position="0,0" size="1920,1080" backgroundColor="transparent" flags="wfNoBorder">
         <eLabel position="0,0" size="1920,1080" backgroundColor="#20000000" zPosition="-1"/>
         <eLabel position="0,110" size="1920,10" backgroundColor="#FF000000" zPosition="-1"/>
-        <eLabel position="0,960" size="1920,10" backgroundColor="#FF000000" zPosition="-1"/>
+                                                                                            
         <widget source="Service" render="Picon" position="20,5" size="180,100" backgroundColor="#000000" alphatest="blend" transparent="1" zPosition="10">
             <convert type="ServiceName">Reference</convert>
         </widget>
         <widget source="Title" render="Label" position="230,0" size="1290,110" font="Mmenu;102" valign="center" foregroundColor="#b0b0b0" backgroundColor="#000000" transparent="1" zPosition="5"/>
-        <ePixmap position="1820,10" size="80,40" pixmap="oZetaNSS-FHD/buttons/80/key_menu.png" alphatest="blend" zPosition="20"/>
-        <ePixmap position="1820,60" size="80,40" pixmap="oZetaNSS-FHD/buttons/80/key_info.png" alphatest="blend" zPosition="20"/>
         <eLabel position="20,130" size="390,500" backgroundColor="#30000000"/>
         <ePixmap pixmap="menu/panels/nocover.png" position="30,140" size="370,480" alphatest="blend" scale="1" zPosition="1"/>
         <widget source="Event" render="zPosterX" position="30,140" size="370,530" zPosition="2"/>
-        <widget name="list" position="440,130" size="1460,800" EventFontSingle="Regular;30" scrollbarMode="showOnDemand" backgroundColorSelected="barColor" foregroundColorSelected="#ffffff" backgroundColor="#000000" scrollbarSliderBorderWidth="1" scrollbarWidth="10" transparent="1"/>
-        <widget source="Event" render="zRunningText" position="10,975" size="1900,90" font="Regular;27" foregroundColor="yellow" backgroundColor="black" transparent="1" valign="top" halign="center" options="movetype=running,direction=top,startpoint=0,startdelay=4000,wrap=1,always=0,repeat=3,oneshot=1">
+        <widget name="list" position="440,140" size="1460,720" EventFontSingle="Regular;26" itemHeight="40" scrollbarMode="showOnDemand" backgroundColorSelected="barColor" foregroundColorSelected="#ffffff" backgroundColor="#000000" scrollbarSliderBorderWidth="1" scrollbarWidth="10" transparent="1"/>
+        <ePixmap position="30,640" pixmap="oZeta-FHD/buttons/button_red.png" size="30,30" alphatest="blend" zPosition="2"/>
+        <widget source="key_red" render="Label" font="Regular;28" position="80,640" size="300,40" halign="left" valign="top" foregroundColor="#808080" backgroundColor="black" zPosition="2" transparent="1"/>
+        <ePixmap position="30,690" pixmap="oZeta-FHD/buttons/button_green.png" size="30,30" alphatest="blend" zPosition="2"/>
+        <widget source="key_green" render="Label" font="Regular;30" position="80,690" size="300,40" halign="left" valign="top" foregroundColor="#808080" backgroundColor="black" zPosition="2" transparent="1"/>
+        <ePixmap position="30,740" pixmap="oZeta-FHD/buttons/button_yellow.png" size="30,30" alphatest="blend" zPosition="2"/>
+        <widget source="key_yellow" render="Label" font="Regular;28" position="80,740" size="300,40" halign="left" valign="top" foregroundColor="#808080" backgroundColor="black" zPosition="2" transparent="1"/>
+        <ePixmap position="30,790" pixmap="oZeta-FHD/buttons/button_blue.png" size="30,30" alphatest="blend" zPosition="2"/>
+        <widget source="key_blue" render="Label" font="Regular;28" position="80,790" size="300,40" halign="left" valign="top" foregroundColor="#808080" backgroundColor="black" zPosition="2" transparent="1"/>
+        <ePixmap position="30,840"  size="80,40" pixmap="oZeta-FHD/buttons/80/key_menu.png" alphatest="blend" zPosition="20"/>
+        <ePixmap position="130,840" size="80,40" pixmap="oZeta-FHD/buttons/80/key_info.png" alphatest="blend" zPosition="20"/>
+        <eLabel position="0,892" size="1920,10" backgroundColor="#FF000000" zPosition="-1"/>
+        <eLabel position="0,901" size="1920,2" backgroundColor="#606060" zPosition="1"/>
+        <widget source="Event" render="zRunningText" position="10,905" size="1900,180" font="Regular;28" foregroundColor="yellow" backgroundColor="black" transparent="1" valign="top" halign="center" 
+            options="movetype=running,direction=top,startpoint=0,startdelay=4000,wrap=1,always=0,repeat=3,oneshot=1">
             <convert type="EventName">FullDescription</convert>
         </widget>
-        <ePixmap position="30,740" pixmap="oZetaNSS-FHD/buttons/button_red.png" size="30,30" alphatest="blend" zPosition="2"/>
-        <widget source="key_red" render="Label" font="Regular;28" position="80,740" size="300,40" halign="left" valign="top" foregroundColor="ltbluette" backgroundColor="black" zPosition="2" transparent="1"/>
-        <ePixmap position="30,790" pixmap="oZetaNSS-FHD/buttons/button_green.png" size="30,30" alphatest="blend" zPosition="2"/>
-        <widget source="key_green" render="Label" font="Regular;30" position="80,790" size="300,40" halign="left" valign="top" foregroundColor="ltbluette" backgroundColor="black" zPosition="2" transparent="1"/>
-        <ePixmap position="30,840" pixmap="oZetaNSS-FHD/buttons/button_yellow.png" size="30,30" alphatest="blend" zPosition="2"/>
-        <widget source="key_yellow" render="Label" font="Regular;28" position="80,840" size="300,40" halign="left" valign="top" foregroundColor="ltbluette" backgroundColor="black" zPosition="2" transparent="1"/>
-        <ePixmap position="30,890" pixmap="oZetaNSS-FHD/buttons/button_blue.png" size="30,30" alphatest="blend" zPosition="2"/>
-        <widget source="key_blue" render="Label" font="Regular;28" position="80,890" size="300,40" halign="left" valign="top" foregroundColor="ltbluette" backgroundColor="black" zPosition="2" transparent="1"/>
     </screen>
     <!-- EPG Search -->
     <screen name="EPGSearch" title="EPG Search" position="0,0" size="1920,1080" backgroundColor="#FF000000" flags="wfNoBorder">
@@ -2502,7 +2505,7 @@
     <!-- SETUPs Screens -->
     <!-- ************************************* -->
     <screen name="setup_common">
-        <panel name="LayerMenu1500-nl"/>
+        <panel name="LayerMenu1500"/>
         <panel name="vButtonTemplate-1500"/>
         <ePixmap position="230,10" size="110,110" pixmap="oZetaNSS-FHD/iconsmenu/usage_setup.png" alphatest="blend" transparent="1" scale="1" zPosition="1"/>
         <widget name="description" position="230,135" size="1250,105" font="Regular;30" foregroundColor="yellow" halign="center" valign="center" backgroundColor="#202020" transparent="0" zPosition="1"/>

@@ -23,15 +23,6 @@
         <panel name="PartSecondInfoSimple"/>
         <panel name="PartInfoCrypt"/>
     </screen>
-    <!-- *** oZeta - XML Version 2.27 Radio Blue By zSetup v2.0.0 *** -->
-    <!-- Author mmark : Modules : TempChannelSelectionRadio + PartChannelSelectionRadioInfo + PartRadioInfoBar -->
-    <screen name="ChannelSelectionRadio" position="0,0" size="1920,1080" title="Radio Channel Selection" zPosition="-10" flags="wfNoBorder" backgroundColor="transparent">
-        <panel name="TempChannelSelectionRadio"/>
-        <panel name="PartChannelSelectionRadioInfo"/>
-    </screen>
-    <screen name="RadioInfoBar" position="1020,890" size="850,150" title="Radio" zPosition="1" flags="wfNoBorder">
-        <panel name="PartRadioInfoBar"/>
-    </screen>
     <!-- *** oZeta - XML Version 2.27 Channel Selection Default By zSetup v2.0.0 *** -->
     <!-- Author mmark : Modules : TempChannelSelectionSmall + PartChannelSelectionNext -->
     <screen name="ChannelSelection" position="0,0" size="1920,1080" title="Channel Selection Default" backgroundColor="#FF000000" flags="wfNoBorder">
@@ -43,6 +34,15 @@
     <screen name="Volume" position="1600,50" zPosition="1" size="250,120" title="Volume" backgroundColor="#FF000000" flags="wfNoBorder">
         <ePixmap pixmap="menu/volpic.png" position="0,0" size="250,120" alphatest="blend" zPosition="2" transparent="1"/>
         <widget source="global.CurrentTime" render="zVolumeText" position="120,0" size="120,110" font="LCD;90" halign="center" valign="center" foregroundColor="#ffffff" backgroundColor="bluette" transparent="1" zPosition="4"/>
+    </screen>
+    <!-- *** oZeta - XML Version 2.27 Radio Blue By zSetup v2.0.0 *** -->
+    <!-- Author mmark : Modules : TempChannelSelectionRadio + PartChannelSelectionRadioInfo + PartRadioInfoBar -->
+    <screen name="ChannelSelectionRadio" position="0,0" size="1920,1080" title="Radio Channel Selection" zPosition="-10" flags="wfNoBorder" backgroundColor="transparent">
+        <panel name="TempChannelSelectionRadio"/>
+        <panel name="PartChannelSelectionRadioInfo"/>
+    </screen>
+    <screen name="RadioInfoBar" position="1020,890" size="850,150" title="Radio" zPosition="1" flags="wfNoBorder">
+        <panel name="PartRadioInfoBar"/>
     </screen>
     <!-- *** oZETA 2.0 - XML Version 2.27 MediaPlayer Technics By oZetaSetup v2.0.0 ***  -->
     <!-- Author mmark Modules : TechnicsMediaPlayer -->
@@ -59,10 +59,10 @@
         <ePixmap position="1500,0" size="420,1080" pixmap="oZetaNSS-FHD/menu/pC.png" zPosition="-1"/>
         <eLabel position="230,960" size="1250,3" backgroundColor="#303030" zPosition="4"/>
         <!-- PICON Pli/ATV -->
-        <widget name="channel" position="440,0" size="1000,120" font="Mmenu;102" foregroundColor="#b0b0b0" backgroundColor="#10000000" transparent="1" zPosition="5"/>
         <widget source="Service" render="Picon" position="230,5" size="180,110" backgroundColor="#000000" alphatest="blend" transparent="1" zPosition="10">
             <convert type="ServiceName">Reference</convert>
         </widget>
+        <widget name="channel" position="440,0" size="1000,120" font="Mmenu;102" foregroundColor="#b0b0b0" backgroundColor="#10000000" transparent="1" zPosition="5"/>
         <!-- Event Now -->
         <widget source="session.Event_Now" render="Label" position="660,135" size="650,50" font="Regular;44" halign="left" foregroundColor="yellow" backgroundColor="#000000" transparent="1" zPosition="5">
             <convert type="EventName">Name</convert>
@@ -94,6 +94,7 @@
             <convert type="EventName">Genre</convert>
         </widget>
         <widget name="FullDescription" position="240,645" size="1240,330" font="Regular;30" halign="block" foregroundColor="#ffffff" backgroundColor="#000000" transparent="1" zPosition="5"/>
+        <!-- <widget name="epg_description" position="240,645" size="1240,330" font="Regular;30" halign="block" foregroundColor="#ffffff" backgroundColor="#000000" transparent="1" zPosition="5"/> -->
         <ePixmap position="660,420" pixmap="oZetaNSS-FHD/buttons/80/key_green.png" size="80,40" alphatest="blend" zPosition="2"/>
         <widget source="key_green" render="Label" font="Regular;32" position="760,420" size="350,40" halign="left" valign="center" backgroundColor="black" zPosition="2" transparent="1"/>
         <ePixmap position="660,480" size="80,40" pixmap="oZetaNSS-FHD/buttons/80/key_menu.png" alphatest="blend" zPosition="2"/>

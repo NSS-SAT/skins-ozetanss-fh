@@ -67,17 +67,25 @@ def isMountReadonly(mnt):
     return "mount: '%s' doesn't exist" % mnt
 
 
+def isMountedInRW(path):
+    testfile = path + '/tmp-rw-test'
+    os.system('touch ' + testfile)
+    if os.path.exists(testfile):
+        os.system('rm -f ' + testfile)
+        return True
+    return False
+
+
 path_folder = "/tmp/poster"
 if os.path.exists("/media/hdd"):
-    if not isMountReadonly("/media/hdd"):
+    if isMountedInRW("/media/hdd"):
         path_folder = "/media/hdd/poster"
-elif os.path.exists("/media/usb"):
-    if not isMountReadonly("/media/usb"):
+if os.path.exists("/media/usb"):
+    if isMountedInRW("/media/usb"):
         path_folder = "/media/usb/poster"
-elif os.path.exists("/media/mmc"):
-    if not isMountReadonly("/media/mmc"):
+if os.path.exists("/media/mmc"):
+    if isMountedInRW("/media/mmc"):
         path_folder = "/media/mmc/poster"
-
 if not os.path.exists(path_folder):
     os.makedirs(path_folder)
 
@@ -134,6 +142,20 @@ REGEX = re.compile(
         r'\d{1,3}(-я|-й|\sс-н).+|', re.DOTALL)
 
 
+def intCheck():
+    try:
+        response = urlopen("http://google.com", None, 5)
+        response.close()
+    except HTTPError:
+        return False
+    except URLError:
+        return False
+    except socket.timeout:
+        return False
+    else:
+        return True
+
+
 def remove_accents(string):
     if type(string) is not unicode:
         string = unicode(string, encoding='utf-8')
@@ -154,6 +176,15 @@ def unicodify(s, encoding='utf-8', norm=None):
         s = normalize(norm, s)
     return s
 
+
+def str_encode(text, encoding="utf8"):
+	if not PY3:
+		if isinstance(text, unicode):
+			return text.encode(encoding)
+		else:
+			return text
+	else:
+		return text
 
 def convtext(text=''):
     try:
@@ -185,37 +216,37 @@ def convtext(text=''):
                 text.rsplit(" ", 1)[0]
                 text = text.rsplit(" ", 1)[0]
                 text = "the " + str(text)
-                print('the from last to start text: ', text)
+                # print('the from last to start text: ', text)
             text = text + 'FIN'
             # text = re.sub("[^\w\s]", "", text)  # remove .
             # text = re.sub(' [\:][a-z0-9]+.*?FIN', '', text)
             # text = re.sub(' [\:][ ][a-zA-Z0-9]+.*?FIN', '', text)
             # text = re.sub(' [\(][ ][a-zA-Z0-9]+.*?FIN', '', text)
             # text = re.sub(' [\-][ ][a-zA-Z0-9]+.*?FIN', '', text)
-            print('[(00)] ', text)
+            # print('[(00)] ', text)
             if re.search(r'[Ss][0-9][Ee][0-9]+.*?FIN', text):
                 text = re.sub(r'[Ss][0-9][Ee][0-9]+.*?FIN', '', text)
             if re.search(r'[Ss][0-9] [Ee][0-9]+.*?FIN', text):
                 text = re.sub(r'[Ss][0-9] [Ee][0-9]+.*?FIN', '', text)
-            print('[(01)] ', text)
+            # print('[(01)] ', text)
 
             text = re.sub(r'(odc.\s\d+)+.*?FIN', '', text)
             text = re.sub(r'(odc.\d+)+.*?FIN', '', text)
             text = re.sub(r'(\d+)+.*?FIN', '', text)
             text = text.partition("(")[0] + 'FIN'  # .strip()
             text = re.sub("\s\d+", "", text)
-            print('1 odc my test:', text)
+            # print('1 odc my test:', text)
 
             text = text.partition("(")[0]  # .strip()
             text = text.partition(":")[0]  # .strip()
             text = text.partition(" -")[0]  # .strip()
             # text = re.sub(r'(?:\d+\s\odc\.\d+\s)?(.+)+.*?FIN', '', text)
-            print('2 my test:', text)
+            # print('2 my test:', text)
             text = re.sub(' - +.+?FIN', '', text)  # all episodes and series ????
             text = re.sub('FIN', '', text)
-            print('[(02)] ', text)
+            # print('[(02)] ', text)
             # text = REGEX.sub('', text)  # paused
-            print('[(03)] ', text)
+            # print('[(03)] ', text)
             text = re.sub(r'^\|[\w\-\|]*\|', '', text)
             text = re.sub(r"[-,?!/\.\":]", '', text)  # replace (- or , or ! or / or . or " or :) by space
             # text = unicodify(text)
@@ -230,19 +261,6 @@ def convtext(text=''):
         print('convtext error: ', e)
         pass
 
-
-def intCheck():
-    try:
-        response = urlopen("http://google.com", None, 5)
-        response.close()
-    except HTTPError:
-        return False
-    except URLError:
-        return False
-    except socket.timeout:
-        return False
-    else:
-        return True
 
 
 class zInfoEvents(Renderer, VariableText):
@@ -369,6 +387,7 @@ class zInfoEvents(Renderer, VariableText):
 
     def filterSearch(self):
         try:
+            self.srch = "multi"
             sd = "%s\n%s\n%s" % (self.event.getEventName(), self.event.getShortDescription(), self.event.getExtendedDescription())
             w = [
                     "t/s",
