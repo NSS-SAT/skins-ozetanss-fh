@@ -64,6 +64,9 @@ thetvdb_skin = "%senigma2/%s/thetvdbkey" % (mvi, my_cur_skin)
 thetvdbkey = 'D19315B88B2DE21F'
 welcome = 'WELCOME Z USER\nfrom\nLululla and Mmark'
 tarfile = '/tmp/download.tar'
+plitrue = False
+if os.path.exists('/usr/lib/enigma2/python/Plugins/PLi'):
+    plitrue = True
 #  -----------------
 
 XStreamity = False
@@ -557,10 +560,9 @@ class oZetaNSS(ConfigListScreen, Screen):
                     if config.ozetanss.data3.value is True:
                         self.list.append(getConfigListEntry("--Load VISUALWEATHER Apikey", config.ozetanss.api3, _("Load VISUALWEATHER Apikey from /etc/enigma2/VisualWeather/apikey.txt")))
                         self.list.append(getConfigListEntry("--Set VISUALWEATHER Apikey", config.ozetanss.txtapi3, _("Signup on www.visualcrossing.com and input free personal ApiKey")))
-
-            self.list.append(getConfigListEntry(("MISC SETUP")))
-            # self.list.append(getConfigListEntry("Install or Open mmPicons Plugin", config.ozetanss.mmpicons, _("Install or Open mmPicons Plugin\nPress OK")))
             if XStreamity is True:
+                self.list.append(getConfigListEntry(("MISC SETUP")))
+                # self.list.append(getConfigListEntry("Install or Open mmPicons Plugin", config.ozetanss.mmpicons, _("Install or Open mmPicons Plugin\nPress OK")))
                 self.list.append(getConfigListEntry('Install Skin Zeta for XStreamity Plugin (only FHD)', config.ozetanss.XStreamity, _("Install Skin Zeta for XStreamity Plugin (only FHD)\nPress Ok")))
 
             self["config"].list = self.list
@@ -919,7 +921,7 @@ class oZetaNSS(ConfigListScreen, Screen):
                     # skFilewM = open(skinMenu, 'w')
                     # skFilewM.write('<?xml version="1.0" encoding="UTF-8"?>\n<skin>\n' + file_menu + '\n</skin>\n')
                     # skFilewM.close()
-                
+
                 if fileExists(infobar_file):
                     print("Infobar file %s found, writing....." % infobar_file)
                     skFile = open(infobar_file, 'r')
@@ -1228,20 +1230,6 @@ class oZetaNSS(ConfigListScreen, Screen):
     def errorLoad(self):
         print('error: errorLoad')
 
-# # import mmpicons plugin OK work
-    # def zMMpicons(self):
-        # mmpiconz = resolveFilename(SCOPE_PLUGINS, "Extensions/{}".format('mmPicons'))
-        # if os.path.isdir(mmpiconz):
-            # from Plugins.Extensions.mmPicons.plugin import SelectPicons
-            # self.session.open(SelectPicons)
-        # else:
-            # try:
-                # restartbox = self.session.openWithCallback(Uri.zPicons, MessageBox, _('mmPicons Plugin Not Installed!!\nDo you really want to install now?'), MessageBox.TYPE_YESNO)
-                # restartbox.setTitle(_('Install mmPicons'))
-                # print('mmPicons - Done!!!')
-                # self.createSetup()
-            # except Exception as e:
-                # print('error download ', e)
 
 # weather search
 # config.plugins.ozeta.zweather = ConfigOnOff(default=False)
@@ -1370,18 +1358,6 @@ class oZetaNSS(ConfigListScreen, Screen):
 
     def zExit(self):
         self.close()
-
-    # def zExit(self, answer=None):
-        # if answer is None:
-            # if self["config"].isChanged():
-                # self.session.openWithCallback(self.zExit, MessageBox, _("Really close without saving settings?"))
-            # else:
-                # self.close()
-        # elif answer:
-            # for x in self["config"].list:
-                # x[1].cancel()
-            # self.close()
-        # return
 
 
 class ozHelp(Screen):

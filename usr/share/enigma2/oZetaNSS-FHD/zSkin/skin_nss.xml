@@ -165,6 +165,11 @@
     <screen name="MMarkPiconsf" position="0,0" size="1920,1080" title="NSS Addon Manager" backgroundColor="#ff000000" flags="wfNoBorder">
         <panel name="Categories"/>
     </screen>
+    <!-- ************* OpenPicons************* -->
+    <screen name="OpenPicons" position="0,0" size="1920,1080" title="NSS Addon Manager" backgroundColor="#ff000000" flags="wfNoBorder">
+        <panel name="Categories"/>
+    </screen>    
+    
     <!-- ************* Script ************* -->
     <screen name="ScriptExecuter" position="0,0" size="1920,1080" title="Script" backgroundColor="#ff000000" flags="wfNoBorder">>
 		<panel name="LayerMenu1000"/>
