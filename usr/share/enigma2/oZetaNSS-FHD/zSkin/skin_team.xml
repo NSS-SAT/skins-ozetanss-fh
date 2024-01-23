@@ -8,6 +8,8 @@
         <panel name="MenuTemplate" zPosition="2"/>
         <panel name="Logo"/>
     </screen>
+    
+
     <!--Main Menu Icons -->
     <screen name="menu_mainmenu" position="0,0" size="1920,1080" title="Main menu" flags="wfNoBorder" backgroundColor="transparent">
         <panel name="MenuTemplate"/>
@@ -15,10 +17,23 @@
             <convert type="MenuEntryCompare">vmc_init_startvmc</convert>
             <convert type="ConditionalShowHide"/>
         </widget>
+        
+        <widget source="menu" render="Pixmap" pixmap="oZetaNSS-FHD/iconsmenu/nss.png" position="940,10" size="110,110" scale="1" zPosition="10" alphatest="blend">
+            <convert type="MenuEntryCompare">NssMenu</convert>
+            <convert type="ConditionalShowHide"/>
+        </widget>
+     
         <widget source="menu" render="Pixmap" pixmap="oZetaNSS-FHD/iconsmenu/menu_information_about.png" position="940,10" size="110,110" scale="1" zPosition="10" alphatest="blend">
             <convert type="MenuEntryCompare">Infopanel</convert>
             <convert type="ConditionalShowHide"/>
         </widget>
+        
+        
+        <widget source="menu" render="Pixmap" pixmap="oZetaNSS-FHD/menu/sLogo.png" position="940,10" size="110,110" scale="1" zPosition="10" alphatest="blend">
+            <convert type="MenuEntryCompare">NSSAddon</convert>
+            <convert type="ConditionalShowHide"/>
+        </widget>
+        
         <widget source="menu" render="Pixmap" pixmap="oZetaNSS-FHD/iconsmenu/menu_mainmenu_openstore.png" position="940,10" size="110,110" scale="1" zPosition="10" alphatest="blend">
             <convert type="MenuEntryCompare">OpenStore</convert>
             <convert type="ConditionalShowHide"/>
@@ -132,26 +147,50 @@
             <convert type="ConditionalShowHide"/>
         </widget>
     </screen>
+    
+    
+    <!-- Menu NssMenu /  by lululla-->    
+    <screen name="NssMenu" position="0,0" size="1920,1080" title="Main menu" flags="wfNoBorder" backgroundColor="transparent">
+        <panel name="MenuTemplate"/>
+        <widget source="menu" render="Pixmap" pixmap="oZetaNSS-FHD/menu/sLogo.png" position="940,10" size="110,110" scale="1" zPosition="10" alphatest="blend">
+            <convert type="MenuEntryCompare">NSSAddon</convert>
+            <convert type="ConditionalShowHide"/>
+        </widget>
+        <widget source="menu" render="Pixmap" pixmap="oZetaNSS-FHD/menu/sLogo.png" position="940,10" size="110,110" scale="1" zPosition="10" alphatest="blend">
+            <convert type="MenuEntryCompare">NssCam</convert>
+            <convert type="ConditionalShowHide"/>
+        </widget>
+        <widget source="menu" render="Pixmap" pixmap="oZetaNSS-FHD/iconsmenu/oZsetup.png" position="940,10" size="110,110" scale="1" zPosition="10" alphatest="blend">
+            <convert type="MenuEntryCompare">NssZeta</convert>
+            <convert type="ConditionalShowHide"/>
+        </widget>
+        <widget source="menu" render="Pixmap" pixmap="oZetaNSS-FHD/iconsmenu/menu_information_about.png" position="940,10" size="110,110" scale="1" zPosition="10" alphatest="blend">
+            <convert type="MenuEntryCompare">about_screen</convert>
+            <convert type="ConditionalShowHide"/>
+        </widget>        
+    </screen>
+
+    
     <!-- InfoMenu OK -->
     <screen name="menu_timermenu" position="0,0" size="1920,1080" title="Main menu" flags="wfNoBorder" backgroundColor="transparent">
         <panel name="MenuTemplate"/>
-        <widget source="menu" render="Pixmap" pixmap="icons/menu_timermenu_autotimers.png" position="940,10" size="110,110" scale="1" zPosition="10" alphatest="blend">
+        <widget source="menu" render="Pixmap" pixmap="oZetaNSS-FHD/oZetaNSS-FHD/icons/menu_timermenu_autotimers.png" position="940,10" size="110,110" scale="1" zPosition="10" alphatest="blend">
             <convert type="MenuEntryCompare">autotimer_setup</convert>
             <convert type="ConditionalShowHide"/>
         </widget>
-        <widget source="menu" render="Pixmap" pixmap="icons/menu_timermenu_crontimers.png" position="940,10" size="110,110" scale="1" zPosition="10" alphatest="blend">
+        <widget source="menu" render="Pixmap" pixmap="oZetaNSS-FHD/oZetaNSS-FHD/icons/menu_timermenu_crontimers.png" position="940,10" size="110,110" scale="1" zPosition="10" alphatest="blend">
             <convert type="MenuEntryCompare">crontimer_edit</convert>
             <convert type="ConditionalShowHide"/>
         </widget>
-        <widget source="menu" render="Pixmap" pixmap="icons/menu_timermenu_timers.png" position="940,10" size="110,110" scale="1" zPosition="10" alphatest="blend">
+        <widget source="menu" render="Pixmap" pixmap="oZetaNSS-FHD/oZetaNSS-FHD/icons/menu_timermenu_timers.png" position="940,10" size="110,110" scale="1" zPosition="10" alphatest="blend">
             <convert type="MenuEntryCompare">timer_edit</convert>
             <convert type="ConditionalShowHide"/>
         </widget>
-        <widget source="menu" render="Pixmap" pixmap="icons/menu_timermenu_powertimers.png" position="940,10" size="110,110" scale="1" zPosition="10" alphatest="blend">
+        <widget source="menu" render="Pixmap" pixmap="oZetaNSS-FHD/icons/menu_timermenu_powertimers.png" position="940,10" size="110,110" scale="1" zPosition="10" alphatest="blend">
             <convert type="MenuEntryCompare">powertimer_edit</convert>
             <convert type="ConditionalShowHide"/>
         </widget>
-        <widget source="menu" render="Pixmap" pixmap="icons/menu_timermenu_timers.png" position="940,10" size="110,110" scale="1" zPosition="10" alphatest="blend">
+        <widget source="menu" render="Pixmap" pixmap="oZetaNSS-FHD/icons/menu_timermenu_timers.png" position="940,10" size="110,110" scale="1" zPosition="10" alphatest="blend">
             <convert type="MenuEntryCompare">remotetimer</convert>
             <convert type="ConditionalShowHide"/>
         </widget>
@@ -159,19 +198,19 @@
     <!-- VideoMenu OK -->
     <screen name="menu_video_menu" position="0,0" size="1920,1080" title="Video menu" flags="wfNoBorder" backgroundColor="transparent">
         <panel name="MenuTemplate"/>
-        <widget source="menu" render="Pixmap" pixmap="icons/service_info.png" position="940,10" size="110,110" scale="1" zPosition="10" alphatest="blend">
+        <widget source="menu" render="Pixmap" pixmap="oZetaNSS-FHD/icons/service_info.png" position="940,10" size="110,110" scale="1" zPosition="10" alphatest="blend">
             <convert type="MenuEntryCompare">video_setup</convert>
             <convert type="ConditionalShowHide"/>
         </widget>
-        <widget source="menu" render="Pixmap" pixmap="icons/menu_system_videoenhancement_setup.png" position="940,10" size="110,110" scale="1" zPosition="10" alphatest="blend">
+        <widget source="menu" render="Pixmap" pixmap="oZetaNSS-FHD/icons/menu_system_videoenhancement_setup.png" position="940,10" size="110,110" scale="1" zPosition="10" alphatest="blend">
             <convert type="MenuEntryCompare">videoenhancement_setup</convert>
             <convert type="ConditionalShowHide"/>
         </widget>
-        <widget source="menu" render="Pixmap" pixmap="icons/menu_system_videofinetune_setup.png" position="940,10" size="110,110" scale="1" zPosition="10" alphatest="blend">
+        <widget source="menu" render="Pixmap" pixmap="oZetaNSS-FHD/icons/menu_system_videofinetune_setup.png" position="940,10" size="110,110" scale="1" zPosition="10" alphatest="blend">
             <convert type="MenuEntryCompare">video_finetune</convert>
             <convert type="ConditionalShowHide"/>
         </widget>
-        <widget source="menu" render="Pixmap" pixmap="icons/service_info.png" position="940,10" size="110,110" scale="1" zPosition="10" alphatest="blend">
+        <widget source="menu" render="Pixmap" pixmap="oZetaNSS-FHD/icons/service_info.png" position="940,10" size="110,110" scale="1" zPosition="10" alphatest="blend">
             <convert type="MenuEntryCompare">video_clipping</convert>
             <convert type="ConditionalShowHide"/>
         </widget>
@@ -267,16 +306,16 @@
             <convert type="MenuEntryCompare">flash_image</convert>
             <convert type="ConditionalShowHide"/>
         </widget>
-        <widget source="menu" render="Pixmap" pixmap="oZetaNSS-FHD/iconsmenu/menu_software_update.png.png" position="940,10" size="110,110" scale="1" zPosition="10" alphatest="blend">
+        <widget source="menu" render="Pixmap" pixmap="oZetaNSS-FHD/iconsmenu/menu_software_update.png" position="940,10" size="110,110" scale="1" zPosition="10" alphatest="blend">
             <convert type="MenuEntryCompare">software_update</convert>
             <convert type="ConditionalShowHide"/>
         </widget>
-        <widget source="menu" render="Pixmap" pixmap="oZetaNSS-FHD/iconsmenu/menu_software_restore.png.png" position="940,10" size="110,110" scale="1" zPosition="10" alphatest="blend">
+        <widget source="menu" render="Pixmap" pixmap="oZetaNSS-FHD/iconsmenu/menu_software_restore.png" position="940,10" size="110,110" scale="1" zPosition="10" alphatest="blend">
             <convert type="MenuEntryCompare">software_restore</convert>
             <convert type="ConditionalShowHide"/>
         </widget>
         <widget source="menu" render="Pixmap" pixmap="oZetaNSS-FHD/iconsmenu/oZsetup.png" position="940,10" size="110,110" scale="1" zPosition="10" alphatest="blend">
-            <convert type="MenuEntryCompare">oZsetup_menu</convert>
+            <convert type="MenuEntryCompare">NssZeta</convert>
             <convert type="ConditionalShowHide"/>
         </widget>
         <widget source="menu" render="Pixmap" pixmap="oZetaNSS-FHD/iconsmenu/menu_backup_image.png" position="940,10" size="110,110" scale="1" zPosition="10" alphatest="blend">
@@ -324,6 +363,12 @@
     </screen>
     <screen name="menu_cam" position="0,0" size="1920,1080" title="Main menu" flags="wfNoBorder" backgroundColor="transparent">
         <panel name="MenuTemplate"/>
+        
+        <widget source="menu" render="Pixmap" pixmap="oZetaNSS-FHD/menu/sLogo.png" position="940,10" size="110,110" scale="1" zPosition="10" alphatest="blend">
+            <convert type="MenuEntryCompare">NssCam</convert>
+            <convert type="ConditionalShowHide"/>
+        </widget>
+        
         <widget source="menu" render="Pixmap" pixmap="oZetaNSS-FHD/iconsmenu/softcam.png" position="940,10" size="110,110" scale="1" zPosition="10" alphatest="blend">
             <convert type="MenuEntryCompare">softcam_setup</convert>
             <convert type="ConditionalShowHide"/>
@@ -740,7 +785,7 @@
             <convert type="MenuEntryCompare">cablescan</convert>
             <convert type="ConditionalShowHide"/>
         </widget>
-        <widget source="menu" render="Pixmap" pixmap="icons/scan-c.png" position="405,290" size="64,64" alphatest="blend" zPosition="1">
+        <widget source="menu" render="Pixmap" pixmap="oZetaNSS-FHD/icons/scan-c.png" position="405,290" size="64,64" alphatest="blend" zPosition="1">
             <convert type="MenuEntryCompare">cablescan</convert>
             <convert type="ConditionalShowHide"/>
         </widget>
@@ -950,6 +995,7 @@
         <eLabel position="230,205" size="1000,3" backgroundColor="#202020" zPosition="10"/>
         <widget name="list" position="230,250" size="1000,700" itemHeight="50" font="Regular;30" scrollbarMode="showOnDemand" enableWrapAround="1" backgroundColor="#000000" foregroundColor="#ffffff" backgroundColorSelected="barColor" foregroundColorSelected="#ffffff" transparent="1" scrollbarSliderBorderWidth="1" scrollbarWidth="10" scrollbarSliderForegroundColor="#606060" scrollbarSliderBorderColor="#808080" />
         <widget name="rc" pixmaps="rc.png,rcold.png" position="1300,150" zPosition="10" size="154,500" alphatest="blend" transparent="0"/>
+        <!-- 
         <widget alphatest="blend" name="indicatorU0" pixmap="skin_default/yellow_circle23x23.png" position="950,140" offset="11,11" size="23,23" zPosition="11"/>
         <widget alphatest="blend" name="indicatorU1" pixmap="skin_default/yellow_circle23x23.png" position="950,140" offset="11,11" size="23,23" zPosition="11"/>
         <widget alphatest="blend" name="indicatorU2" pixmap="skin_default/yellow_circle23x23.png" position="950,140" offset="11,11" size="23,23" zPosition="11"/>
@@ -982,6 +1028,11 @@
         <widget alphatest="blend" name="indicatorL13" pixmap="skin_default/yellow_circle23x23.png" position="950,140" offset="11,11" size="23,23" zPosition="11"/>
         <widget alphatest="blend" name="indicatorL14" pixmap="skin_default/yellow_circle23x23.png" position="950,140" offset="11,11" size="23,23" zPosition="11"/>
         <widget alphatest="blend" name="indicatorL15" pixmap="skin_default/yellow_circle23x23.png" position="950,140" offset="11,11" size="23,23" zPosition="11"/>
+        -->
+		<widget name="arrowdown" pixmap="arrowdown.png" position="-100,-100" zPosition="11" size="37,70" alphatest="blend"/>
+		<widget name="arrowdown2" pixmap="arrowdown.png" position="-100,-100" zPosition="11" size="37,70" alphatest="blend"/>
+		<widget name="arrowup" pixmap="arrowup.png" position="-100,-100" zPosition="11" size="37,70" alphatest="blend"/>
+		<widget name="arrowup2" pixmap="arrowup.png" position="-100,-100" zPosition="11" size="37,70" alphatest="blend"/>
     </screen>
 	<screen name="EventView" position="0,0" size="1920,1080" title="EventView" backgroundColor="transparent" flags="wfNoBorder">
         	<panel name="vButtonTemplate-1500"/>

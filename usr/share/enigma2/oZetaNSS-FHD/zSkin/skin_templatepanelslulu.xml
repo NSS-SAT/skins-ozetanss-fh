@@ -185,7 +185,7 @@
         <eLabel text="Plugins" position="540,1035" size="230,33" font="Regular;28" foregroundColor="#FFFFFF" backgroundColor="#000000" transparent="1" zPosition="1" />
         <ePixmap pixmap="oZetaNSS-FHD/buttons/button_yellow.png" position="775,1035" size="30,30" alphatest="blend" zPosition="2" />
         <eLabel text="Audio" position="810,1035" size="230,33" font="Regular;28" foregroundColor="#FFFFFF" backgroundColor="#000000" transparent="1" zPosition="1" />
-        <eLabel text="NssAddons" position="1085,1035" size="230,33" font="Regular;28" foregroundColor="#FFFFFF" backgroundColor="#000000" transparent="1" zPosition="1" />
+        <eLabel text="Extensions" position="1085,1035" size="230,33" font="Regular;28" foregroundColor="#FFFFFF" backgroundColor="#000000" transparent="1" zPosition="1" />
         <ePixmap pixmap="oZetaNSS-FHD/buttons/button_blue.png" position="1050,1035" size="30,30" alphatest="blend" zPosition="2" />
         <ePixmap position="1480,1035" size="60,30" pixmap="oZetaNSS-FHD/buttons/80/key_info.png" alphatest="blend" scale="1" zPosition="2" />
         <ePixmap position="1400,1035" size="60,30" pixmap="oZetaNSS-FHD/buttons/80/key_menu.png" alphatest="blend" scale="1" zPosition="2" />

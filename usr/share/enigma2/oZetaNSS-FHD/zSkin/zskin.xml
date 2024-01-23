@@ -1742,31 +1742,30 @@
     </screen>
     <!-- EPG Stuff -->
     <screen name="EPGSelection" title="EGP Selection" position="0,0" size="1920,1080" backgroundColor="transparent" flags="wfNoBorder">
-        <eLabel position="0,0" size="1920,1080" backgroundColor="#20000000" zPosition="-1"/>
-        <eLabel position="0,110" size="1920,10" backgroundColor="#FF000000" zPosition="-1"/>
+        <eLabel position="0,0" size="1920,1080" backgroundColor="#20000000" zPosition="-1" />
+        <eLabel position="0,110" size="1920,10" backgroundColor="#FF000000" zPosition="-1" />
                                                                                             
         <widget source="Service" render="Picon" position="20,5" size="180,100" backgroundColor="#000000" alphatest="blend" transparent="1" zPosition="10">
             <convert type="ServiceName">Reference</convert>
         </widget>
-        <widget source="Title" render="Label" position="230,0" size="1290,110" font="Mmenu;102" valign="center" foregroundColor="#b0b0b0" backgroundColor="#000000" transparent="1" zPosition="5"/>
-        <eLabel position="20,130" size="390,500" backgroundColor="#30000000"/>
-        <ePixmap pixmap="menu/panels/nocover.png" position="30,140" size="370,480" alphatest="blend" scale="1" zPosition="1"/>
-        <widget source="Event" render="zPosterX" position="30,140" size="370,530" zPosition="2"/>
-        <widget name="list" position="440,140" size="1460,720" EventFontSingle="Regular;26" itemHeight="40" scrollbarMode="showOnDemand" backgroundColorSelected="barColor" foregroundColorSelected="#ffffff" backgroundColor="#000000" scrollbarSliderBorderWidth="1" scrollbarWidth="10" transparent="1"/>
-        <ePixmap position="30,640" pixmap="oZeta-FHD/buttons/button_red.png" size="30,30" alphatest="blend" zPosition="2"/>
-        <widget source="key_red" render="Label" font="Regular;28" position="80,640" size="300,40" halign="left" valign="top" foregroundColor="#808080" backgroundColor="black" zPosition="2" transparent="1"/>
-        <ePixmap position="30,690" pixmap="oZeta-FHD/buttons/button_green.png" size="30,30" alphatest="blend" zPosition="2"/>
-        <widget source="key_green" render="Label" font="Regular;30" position="80,690" size="300,40" halign="left" valign="top" foregroundColor="#808080" backgroundColor="black" zPosition="2" transparent="1"/>
-        <ePixmap position="30,740" pixmap="oZeta-FHD/buttons/button_yellow.png" size="30,30" alphatest="blend" zPosition="2"/>
-        <widget source="key_yellow" render="Label" font="Regular;28" position="80,740" size="300,40" halign="left" valign="top" foregroundColor="#808080" backgroundColor="black" zPosition="2" transparent="1"/>
-        <ePixmap position="30,790" pixmap="oZeta-FHD/buttons/button_blue.png" size="30,30" alphatest="blend" zPosition="2"/>
-        <widget source="key_blue" render="Label" font="Regular;28" position="80,790" size="300,40" halign="left" valign="top" foregroundColor="#808080" backgroundColor="black" zPosition="2" transparent="1"/>
-        <ePixmap position="30,840"  size="80,40" pixmap="oZeta-FHD/buttons/80/key_menu.png" alphatest="blend" zPosition="20"/>
-        <ePixmap position="130,840" size="80,40" pixmap="oZeta-FHD/buttons/80/key_info.png" alphatest="blend" zPosition="20"/>
-        <eLabel position="0,892" size="1920,10" backgroundColor="#FF000000" zPosition="-1"/>
-        <eLabel position="0,901" size="1920,2" backgroundColor="#606060" zPosition="1"/>
-        <widget source="Event" render="zRunningText" position="10,905" size="1900,180" font="Regular;28" foregroundColor="yellow" backgroundColor="black" transparent="1" valign="top" halign="center" 
-            options="movetype=running,direction=top,startpoint=0,startdelay=4000,wrap=1,always=0,repeat=3,oneshot=1">
+        <widget source="Title" render="Label" position="230,0" size="1290,110" font="Mmenu;102" valign="center" foregroundColor="#b0b0b0" backgroundColor="#000000" transparent="1" zPosition="5" />
+        <eLabel position="20,130" size="390,500" backgroundColor="#30000000" />
+        <ePixmap pixmap="menu/panels/nocover.png" position="30,140" size="370,480" alphatest="blend" scale="1" zPosition="1" />
+        <widget source="Event" render="zPosterX" position="42,150" size="342,462" zPosition="2" />
+        <widget name="list" position="440,140" size="1460,720" EventFontSingle="Regular;26" itemHeight="40" scrollbarMode="showOnDemand" backgroundColorSelected="barColor" foregroundColorSelected="#ffffff" backgroundColor="#000000" scrollbarSliderBorderWidth="1" scrollbarWidth="10" transparent="1" />
+        <ePixmap position="30,640" pixmap="oZetaNSS-FHD/buttons/button_red.png" size="30,30" alphatest="blend" zPosition="2" />
+        <widget source="key_red" render="Label" font="Regular;28" position="80,640" size="300,40" halign="left" valign="top" foregroundColor="#808080" backgroundColor="black" zPosition="2" transparent="1" />
+        <ePixmap position="30,690" pixmap="oZetaNSS-FHD/buttons/button_green.png" size="30,30" alphatest="blend" zPosition="2" />
+        <widget source="key_green" render="Label" font="Regular;30" position="80,690" size="300,40" halign="left" valign="top" foregroundColor="#808080" backgroundColor="black" zPosition="2" transparent="1" />
+        <ePixmap position="30,740" pixmap="oZetaNSS-FHD/buttons/button_yellow.png" size="30,30" alphatest="blend" zPosition="2" />
+        <widget source="key_yellow" render="Label" font="Regular;28" position="80,740" size="300,40" halign="left" valign="top" foregroundColor="#808080" backgroundColor="black" zPosition="2" transparent="1" />
+        <ePixmap position="30,790" pixmap="oZetaNSS-FHD/buttons/button_blue.png" size="30,30" alphatest="blend" zPosition="2" />
+        <widget source="key_blue" render="Label" font="Regular;28" position="80,790" size="300,40" halign="left" valign="top" foregroundColor="#808080" backgroundColor="black" zPosition="2" transparent="1" />
+        <ePixmap position="30,840" size="80,40" pixmap="oZetaNSS-FHD/buttons/80/key_menu.png" alphatest="blend" zPosition="20" />
+        <ePixmap position="130,840" size="80,40" pixmap="oZetaNSS-FHD/buttons/80/key_info.png" alphatest="blend" zPosition="20" />
+        <eLabel position="0,892" size="1920,10" backgroundColor="#FF000000" zPosition="-1" />
+        <eLabel position="0,901" size="1920,2" backgroundColor="#606060" zPosition="1" />
+        <widget source="Event" render="zRunningText" position="11,905" size="1900,180" font="Regular;28" foregroundColor="yellow" backgroundColor="black" transparent="1" valign="top" halign="center" options="movetype=running,direction=top,startpoint=0,startdelay=4000,wrap=1,always=0,repeat=3,oneshot=1">
             <convert type="EventName">FullDescription</convert>
         </widget>
     </screen>
